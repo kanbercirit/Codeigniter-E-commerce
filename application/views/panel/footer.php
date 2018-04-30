@@ -13,7 +13,15 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?=site_url('vendor/metisMenu/metisMenu.min.js')?>"></script>
 
+    <script src="<?=site_url('vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
+
+    <script src="<?=site_url('vendor/datatables-plugins/dataTables.bootstrap.min.js')?>"></script>
+
+    <script src="<?=site_url('vendor/datatables-responsive/dataTables.responsive.js')?>"></script>
+
     <script src="<?=site_url('vendor/raphael/raphael.min.js')?>"></script>
+
+    <script src="<?=site_url('vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
 
      <script src="<?=site_url('vendor/morrisjs/morris.min.js')?>"></script>
 

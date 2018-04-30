@@ -1,4 +1,4 @@
-<?php $this->load->view('header')?>
+<?php $this->load->view('panel/header')?>
 
        <div class="row">
                     <div class="col-lg-12">
@@ -9,4 +9,4 @@
                 <!-- /.row -->
 
 
-<?php $this->load->view('footer')?>
+<?php $this->load->view('panel/footer')?>

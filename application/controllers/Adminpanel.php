@@ -29,7 +29,7 @@ class AdminPanel extends CI_Controller {
 	} 
 	 
 	function page($folder, $file){
-		$this->load->view($folder.'/'.$file);
+		$this->load->view('panel/'.$folder.'/'.$file);
 	}
 
 	function signup(){
