@@ -242,7 +242,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ayarlar</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Çıkış</a>
+                        <li><a href="<?=site_url('adminpanel/logout')?>"><i class="fa fa-sign-out fa-fw"></i> Çıkış</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
