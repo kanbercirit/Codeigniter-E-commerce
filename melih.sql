@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 30 Nis 2018, 17:02:28
+-- Üretim Zamanı: 30 Nis 2018, 19:11:31
 -- Sunucu sürümü: 10.1.16-MariaDB
 -- PHP Sürümü: 5.5.38
 
@@ -98,12 +98,19 @@ CREATE TABLE `stok` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `adi` varchar(20) DEFAULT NULL,
-  `soyadi` varchar(20) DEFAULT NULL,
-  `sifre` varchar(6) DEFAULT NULL,
-  `mail` text,
+  `name` varchar(20) DEFAULT NULL,
+  `surname` varchar(20) DEFAULT NULL,
+  `password` varchar(6) DEFAULT NULL,
+  `email` text,
   `username` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `username`) VALUES
+(1, NULL, NULL, '1', NULL, 'deneme');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -178,7 +185,7 @@ ALTER TABLE `stok`
 -- Tablo için AUTO_INCREMENT değeri `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
