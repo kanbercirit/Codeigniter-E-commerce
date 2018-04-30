@@ -458,3 +458,11 @@
     <script src="<?=site_url('vendor/datatables-responsive/dataTables.responsive.js')?>"></script>
 
      <script src="<?=site_url('dist/js/sb-admin-2.js')?>"></script>
+
+      <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
