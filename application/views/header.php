@@ -167,7 +167,7 @@
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Siparişler<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?=site_url('adminpanel/page/order/list')?>">Siparişleri Lis</a>
+                                    <a href="<?=site_url('adminpanel/page/order/list')?>">Siparişleri Listele</a>
                                 </li>
                                 <li>
                                     <a href="<?=site_url('adminpanel/page/order/create')?>">Sipariş Ekle</a>
