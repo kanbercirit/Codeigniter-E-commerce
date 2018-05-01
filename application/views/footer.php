@@ -86,21 +86,18 @@
 						<div class="single-widget">
 							<h2>Service</h2>
 							<ul class="nav nav-pills nav-stacked"> 
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Order Status</a></li> 
+								<li><a href="#">Contact Us</a></li> 
 								<li><a href="#">FAQ’s</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Quock Shop</h2>
+							<h2>Türler</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">T-Shirt</a></li>
-								<li><a href="#">Mens</a></li>
-								<li><a href="#">Womens</a></li>
-								<li><a href="#">Gift Cards</a></li>
-								<li><a href="#">Shoes</a></li>
+								<?php foreach ($types as $type) :?> 
+								<li><a href="#"><?=$type->type?></a></li>
+							<?php endforeach;?>
 							</ul>
 						</div>
 					</div>

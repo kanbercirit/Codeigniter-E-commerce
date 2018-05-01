@@ -1,34 +1,25 @@
 <div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center"><?=$content?></h2>
+						<?php foreach ($products as $product) :?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
-								<div class="single-products">
+								<div class="single-products1">
 										<div class="productinfo text-center">
-											<img src="images/home/product1.jpg" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<img src="<?=site_url('images/'.$product->image)?>" alt="" />
+											<h2>$<?=$product->price?></h2>
+											<p><?=$product->name?></p>
+											<?php if($_SESSION['user'] != null) :?>
+											<a href="<?=site_url('site/product_detail/'.$product->id)?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<?php endif;?>
+											<a href="<?=site_url('site/product_detail/'.$product->id)?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Detay</a>
 										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-										</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-									</ul>
 								</div>
 							</div>
 						</div>
-						
+						<?php endforeach;?>
 					</div><!--features_items-->
-					
+					<?php if(FALSE):?>
 					<div class="category-tab"><!--category-tab-->
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
@@ -413,5 +404,5 @@
 							  </a>			
 						</div>
 					</div><!--/recommended_items-->
-					
+					<?php endif;?>
 				</div>

@@ -38,6 +38,8 @@
                                         <th>Ürün Adı</th>
                                         <th>Fiyatı</th>
                                         <th>Türü</th>
+                                        <th>#</th>
+                                        <th>#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,22 +47,16 @@
                                         <td>Galaxy Note 8</td>
                                         <td>3999</td>
                                         <td>Cep Telefonu</td>
+                                        <td>Cep Telefonu</td>
+                                        <td>Cep Telefonu</td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Iphone 7</td>
                                         <td>3300</td>
                                         <td>Cep Telefonu</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Msi PE60 6QE</td>
-                                        <td>Dizüstü Bilgisayar</td>
-                                        <td>3250</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Canon Pixma E414</td>
-                                        <td>Yazıcı</td>
-                                        <td>70</td>
-                                    </tr>
+                                        <td>Cep Telefonu</td>
+                                        <td>Cep Telefonu</td>
+                                    </tr> 
                                 </tbody>
                             </table>
                         </div>

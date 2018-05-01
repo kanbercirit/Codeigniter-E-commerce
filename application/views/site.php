@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
-<body> 
+<body>  
 	<?php $this->load->view('header')?>
 	<?php $this->load->view('slider')?>
 	

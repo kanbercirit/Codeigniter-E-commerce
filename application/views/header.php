@@ -37,10 +37,10 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<?php if($_SESSION['user'] !== null) : ?>
-								<li><a href="#"><i class="fa fa-user"></i> Account</a></li> 
+								<li><a href="<?=site_url('site/page/settings')?>"><i class="fa fa-user"></i> Account</a></li> 
 								<?php endif; ?>
 								<li><a href="<?=site_url('site/page/checkout')?>"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="<?=site_url('site/page/cart')?>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<?php if($_SESSION['user'] == null) : ?>
 								<li><a href="<?=site_url('site/page/login')?>"><i class="fa fa-lock"></i> Login</a></li>
 								<?php endif; ?>
@@ -68,24 +68,17 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
-										<li><a href="<?=site_url('site/page/checkout')?>">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
-                                    </ul>
-                                </li> 
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="<?=site_url()?>" class="active">Home</a></li>
+								<li><a href="<?=site_url('site/page/contact')?>">Contact</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
+						<form action="<?=site_url('site/search')?>" method="post">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
+							<input type="text" name="searchkey" placeholder="Ürün ara"/>
 						</div>
+					</form>
 					</div>
 				</div>
 			</div>
