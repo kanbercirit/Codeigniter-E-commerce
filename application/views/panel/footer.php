@@ -5,6 +5,7 @@
 
     </div>
     <!-- /#wrapper --> 
+<<<<<<< HEAD
  <script src="<?=site_url('vendor/jquery/jquery.min.js')?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -21,6 +22,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?=site_url('dist/js/sb-admin-2.js')?>"></script>
+=======
+ 
+>>>>>>> f799e080b137855809e1f458367321d95010f975
 
     </body>
 
