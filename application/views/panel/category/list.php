@@ -36,125 +36,26 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>İsim</th>
-                                        <th>Soyisim</th>
-                                        <th>Şifre</th>
-                                        <th>E-posta</th>
-                                        <th>Kullanıcı Adı</th>
+                                        <th>Kategori Adı</th>
+                                        <th>Kategori Türü</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
+                                        <td>Cep Telefonu</td>
+                                        <td>Elektroink Eşya</td>
                                     </tr>
                                     <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
+                                        <td>Yazıcı</td>
+                                        <td>Elektronik Eşya</td>
                                     </tr>
                                     <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
+                                        <td>Dizüstü Bilgisayar</td>
+                                        <td>Elektronik Eşya</td>
                                     </tr>
                                     <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Mert</td>
-                                        <td>Artan</td>
-                                        <td>123456</td>
-                                        <td>martan@gmail.com</td>
-                                        <td>martan</td>
+                                        <td>Kitap</td>
+                                        <td>Kişisel Ürün</td>
                                     </tr>
                                 </tbody>
                             </table>

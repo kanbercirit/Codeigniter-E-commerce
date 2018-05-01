@@ -24,9 +24,6 @@
 					<input class="form-control" placeholder="Şifre Giriniz">
                 </div>
                 <div class="form-group">
-				    <p class="form-control-static">email@example.com</p>
-                    </div>
-                <div class="form-group">
 					<label>E-mail</label>
 					<input class="form-control" placeholder="E-mail Adresini Giriniz">
                 </div>

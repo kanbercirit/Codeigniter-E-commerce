@@ -19,6 +19,13 @@
                     <label>Şifre</label>
                     <input class="form-control" placeholder="Şifre Giriniz">
                 </div>
+                <div class="form-group">
+                                            <label>Rol Seçiniz</label>
+                                            <select class="form-control">
+                                                <option>Yönetici</option>
+                                                <option>Kullanıcı</option>
+                                                <option>Geliştirici</option>
+                                            </select>
             </div>
           <button type="submit" class="btn btn-default">Kaydet</button>
         </form> 
