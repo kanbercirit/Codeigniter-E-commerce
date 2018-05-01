@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 30 Nis 2018, 19:11:31
+-- Üretim Zamanı: 01 May 2018, 15:24:29
 -- Sunucu sürümü: 10.1.16-MariaDB
 -- PHP Sürümü: 5.5.38
 
@@ -28,16 +28,28 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
-  `level` int(1) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL
+  `username` varchar(10) DEFAULT NULL,
+  `password` varchar(6) DEFAULT NULL,
+  `level` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Tablo döküm verisi `admin`
 --
 
-INSERT INTO `admin` (`id`, `level`, `user_id`) VALUES
-(1, 1, 1);
+INSERT INTO `admin` (`id`, `username`, `password`, `level`) VALUES
+(1, 'admin', '1', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `brands`
+--
+
+CREATE TABLE `brands` (
+  `id` int(11) NOT NULL,
+  `name` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -51,7 +63,7 @@ CREATE TABLE `orders` (
   `user_id` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `piece` int(11) DEFAULT NULL,
-  `state` int(1) DEFAULT NULL
+  `state` int(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -75,7 +87,9 @@ CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `name` varchar(20) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
-  `type` varchar(5) DEFAULT NULL
+  `type` varchar(5) DEFAULT NULL,
+  `brand_id` int(11) DEFAULT NULL,
+  `sold` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -110,7 +124,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `username`) VALUES
-(1, NULL, NULL, '1', NULL, 'deneme');
+(1, NULL, NULL, '1', 's@s.com', 'deneme');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -120,6 +134,12 @@ INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `username`) V
 -- Tablo için indeksler `admin`
 --
 ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `brands`
+--
+ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -161,6 +181,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Tablo için AUTO_INCREMENT değeri `brands`
+--
+ALTER TABLE `brands`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Tablo için AUTO_INCREMENT değeri `orders`
 --
