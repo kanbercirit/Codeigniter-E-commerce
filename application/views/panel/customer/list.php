@@ -24,7 +24,6 @@
                         <h1 class="page-header">Kullanıcılar</h1>
                     </div>
                 </div>
-            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -166,12 +165,10 @@
                 <!-- /.col-lg-12 -->
             </div>
            </div>
-            
 
 
 
- <script src="<?=site_url('vendor/jquery/jquery.min.js')?>"></script>
-
+     <script src="<?=site_url('vendor/jquery/jquery.min.js')?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?=site_url('vendor/bootstrap/js/bootstrap.min.js')?>"></script>
@@ -179,15 +176,22 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?=site_url('vendor/metisMenu/metisMenu.min.js')?>"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="<?=site_url('vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
+     <script src="<?=site_url('vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
+
     <script src="<?=site_url('vendor/datatables-plugins/dataTables.bootstrap.min.js')?>"></script>
+
     <script src="<?=site_url('vendor/datatables-responsive/dataTables.responsive.js')?>"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="<?=site_url('dist/js/sb-admin-2.')?>"></script>
+    <script src="<?=site_url('vendor/raphael/raphael.min.js')?>"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+     <script src="<?=site_url('vendor/morrisjs/morris.min.js')?>"></script>
+
+     <script src="<?=site_url('data/morris-data.js')?>"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?=site_url('dist/js/sb-admin-2.js')?>"></script>
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
@@ -195,3 +199,8 @@
         });
     });
     </script>
+
+    </body>
+
+</html>
+

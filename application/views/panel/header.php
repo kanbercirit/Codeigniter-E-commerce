@@ -105,12 +105,12 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Kullanıcı Profili</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Kullanıcı Profili</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ayarlar</a>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Ayarlar</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="<?=site_url('adminpanel/logout')?>"><i class="fa fa-sign-out fa-fw"></i> Çıkış</a>
+                        <li><a href="<?=site_url('adminpanel/logout')?>"><i class="fa fa-sign-out fa-fw"></i>Çıkış</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -134,11 +134,11 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?=site_url('adminpanel')?>"><i class="fa fa-dashboard fa-fw"></i> Anasayfa</a>
+                            <a href="<?=site_url('adminpanel')?>"><i class="fa fa-dashboard fa-fw"></i>Anasayfa</a>
                         </li>
                         
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Admin<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Admin<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?=site_url('adminpanel/page/admin/list')?>">Admin Listele</a>
@@ -152,20 +152,20 @@
                         </li>
 
                          <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kullanıcılar<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Müşteriler<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?=site_url('adminpanel/page/user/list')?>">Kullacıları Listele</a>
+                                    <a href="<?=site_url('adminpanel/page/customer/list')?>">Müşterileri Listele</a>
                                 </li>
                                 <li>
-                                    <a href="<?=site_url('adminpanel/page/user/create')?>">Kullanıcı Ekle</a>
+                                    <a href="<?=site_url('adminpanel/page/customer/create')?>">Müşteri Ekle</a>
                                 </li>
                                 
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Ürünler<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Ürünler<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?=site_url('adminpanel/page/product/list')?>">Ürünleri Listele</a>
@@ -178,7 +178,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Siparişler<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Siparişler<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?=site_url('adminpanel/page/order/list')?>">Siparişleri Listele</a>
@@ -192,7 +192,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kategori<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Kategori<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?=site_url('adminpanel/page/category/list')?>">Kategoriler</a>
@@ -206,7 +206,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Markalar<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i>Markalar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?=site_url('adminpanel/page/brand/list')?>">Markalar</a>

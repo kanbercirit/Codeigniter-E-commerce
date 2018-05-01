@@ -23,12 +23,28 @@
                                     <tr>
                                         <th>Kullanıcı Adı</th>
                                         <th>Şifre</th>
+                                        <th><p class="fa fa-info-circle"> Düzenle </p><th>
+                                        <th><p class="fa fa-times-circle"> Sil </p><th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>mertartan</td>
                                         <td>123456</td>
+                                        <td><td>
+                                        <td><td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>mertartan</td>
+                                        <td>123456</td>
+                                        <td><td>
+                                        <td><td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>mertartan</td>
+                                        <td>123456</td>
+                                        <td><td>
+                                        <td><td>
                                     </tr>
                                 </tbody>
                             </table>
