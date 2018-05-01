@@ -18,14 +18,18 @@
     <!-- Custom Fonts -->
   <link href="<?=site_url('vendor/font-awesome/css/font-awesome.min.css')?>" rel="stylesheet" type="text/css">
 
+
     
                 <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Kullanıcılar</h1>
+                    </div>
                 </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Kullanıcı Tablosu
+                            Admin Tablosu
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -44,28 +48,7 @@
                                         <td>123456</td>
                                         <td>Yönetici</td>
                                         <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>hdeyneli</td>
-                                        <td>123456</td>
-                                        <td>Kullanıcı</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>myavuz</td>
-                                        <td>123456</td>
-                                        <td>Yönetici</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>kyaa</td>
-                                        <td>123456</td>
-                                        <td>Kullanıcı</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                 </tbody>
                             </table>

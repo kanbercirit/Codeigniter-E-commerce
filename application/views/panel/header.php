@@ -25,6 +25,9 @@
     <!-- Custom Fonts -->
     <link href="<?=site_url('vendor/font-awesome/css/font-awesome.min.css')?>" rel="stylesheet" type="text/css">
 
+    
+
+
 </head>
 
 <body>
@@ -40,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?=site_url('adminpanel')?>">Doğru Tic. A.Ş.</a>
+                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -50,23 +53,13 @@
             
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Kullanıcı Profili</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Ayarlar</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="<?=site_url('adminpanel/logout')?>"><i class="fa fa-sign-out fa-fw"></i>Çıkış</a>
-                        </li>
-                    </ul>
+                    <a href="<?=site_url('adminpanel/logout')?>"><i class="fa fa-sign-out fa-fw"></i>Çıkış</a>
                     <!-- /.dropdown-user -->
                 </li>
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
+
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">

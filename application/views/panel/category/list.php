@@ -1,5 +1,6 @@
 <?php $this->load->view('panel/header')?>
 
+
  <link href="<?=site_url('vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
@@ -17,19 +18,18 @@
     <!-- Custom Fonts -->
   <link href="<?=site_url('vendor/font-awesome/css/font-awesome.min.css')?>" rel="stylesheet" type="text/css">
 
-       <div class="row">
+
+    
+                <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Kategoriler</h1>
                     </div>
-                    <!-- /.col-lg-12 -->
                 </div>
-                <!-- /.row -->
-
-                <div class="row">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Kullanıcı Tablosu
+                            Kategori Tablosu
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -38,25 +38,34 @@
                                     <tr>
                                         <th>Kategori Adı</th>
                                         <th>Kategori Türü</th>
+                                        <th>Ekle/Sil<th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="gradeX">
                                         <td>Cep Telefonu</td>
                                         <td>Elektroink Eşya</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Yazıcı</td>
                                         <td>Elektronik Eşya</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Dizüstü Bilgisayar</td>
                                         <td>Elektronik Eşya</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Kitap</td>
                                         <td>Kişisel Ürün</td>
-                                    </tr>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                             </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -68,8 +77,7 @@
             </div>
            </div>
 
-<script src="<?=site_url('vendor/jquery/jquery.min.js')?>"></script>
-
+  <script src="<?=site_url('vendor/jquery/jquery.min.js')?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?=site_url('vendor/bootstrap/js/bootstrap.min.js')?>"></script>
@@ -77,15 +85,22 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?=site_url('vendor/metisMenu/metisMenu.min.js')?>"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="<?=site_url('vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
+     <script src="<?=site_url('vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
+
     <script src="<?=site_url('vendor/datatables-plugins/dataTables.bootstrap.min.js')?>"></script>
+
     <script src="<?=site_url('vendor/datatables-responsive/dataTables.responsive.js')?>"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="<?=site_url('dist/js/sb-admin-2.')?>"></script>
+    <script src="<?=site_url('vendor/raphael/raphael.min.js')?>"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+     <script src="<?=site_url('vendor/morrisjs/morris.min.js')?>"></script>
+
+     <script src="<?=site_url('data/morris-data.js')?>"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?=site_url('dist/js/sb-admin-2.js')?>"></script>
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
@@ -94,6 +109,6 @@
     });
     </script>
 
+    </body>
 
-
-<?php $this->load->view('panel/footer')?>
+</html>

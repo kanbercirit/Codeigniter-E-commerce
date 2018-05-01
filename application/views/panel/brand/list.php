@@ -36,6 +36,7 @@
                                         <th>Marka Adı</th>
                                         <th>Menşei</th>
                                         <th>Türü</th>
+                                        <th>Ekle/Sil<th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,21 +44,29 @@
                                         <td>HP</td>
                                         <td>Amerika Birleşik Devletleri</td>
                                         <td>Elektronik Eşya</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Iphone</td>
                                         <td>Amerika Birleşik Devletleri</td>
                                         <td>Elektronik Eşya</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Samsung</td>
                                         <td>Güney Kore</td>
                                         <td>Elektronik Eşya</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Canon</td>
                                         <td>Amerika Birleşik Devletleri</td>
                                         <td>Elektronik Eşya</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -71,8 +80,7 @@
            </div>
 
 
- <script src="<?=site_url('vendor/jquery/jquery.min.js')?>"></script>
-
+  <script src="<?=site_url('vendor/jquery/jquery.min.js')?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?=site_url('vendor/bootstrap/js/bootstrap.min.js')?>"></script>
@@ -80,15 +88,22 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?=site_url('vendor/metisMenu/metisMenu.min.js')?>"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="<?=site_url('vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
+     <script src="<?=site_url('vendor/datatables/js/jquery.dataTables.min.js')?>"></script>
+
     <script src="<?=site_url('vendor/datatables-plugins/dataTables.bootstrap.min.js')?>"></script>
+
     <script src="<?=site_url('vendor/datatables-responsive/dataTables.responsive.js')?>"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="<?=site_url('dist/js/sb-admin-2.')?>"></script>
+    <script src="<?=site_url('vendor/raphael/raphael.min.js')?>"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+     <script src="<?=site_url('vendor/morrisjs/morris.min.js')?>"></script>
+
+     <script src="<?=site_url('data/morris-data.js')?>"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?=site_url('dist/js/sb-admin-2.js')?>"></script>
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
@@ -97,6 +112,6 @@
     });
     </script>
 
+    </body>
 
-
-<?php $this->load->view('panel/footer')?>
+</html>

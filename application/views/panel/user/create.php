@@ -23,7 +23,6 @@
                                             <label>Rol Seçiniz</label>
                                             <select class="form-control">
                                                 <option>Yönetici</option>
-                                                <option>Kullanıcı</option>
                                                 <option>Geliştirici</option>
                                             </select>
             </div>

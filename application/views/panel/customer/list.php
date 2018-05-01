@@ -19,7 +19,10 @@
   <link href="<?=site_url('vendor/font-awesome/css/font-awesome.min.css')?>" rel="stylesheet" type="text/css">
 
     
-                <div class="row">
+                 <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Müşteriler</h1>
+                    </div>
                 </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -37,6 +40,7 @@
                                         <th>Şifre</th>
                                         <th>E-posta</th>
                                         <th>Kullanıcı Adı</th>
+                                        <th>Ekle/Sil<th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -46,6 +50,8 @@
                                         <td>123456</td>
                                         <td>aliak@gmail.com</td>
                                         <td>aliak</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Veli</td>
@@ -53,6 +59,8 @@
                                         <td>123456</td>
                                         <td>velikara@gmail.com</td>
                                         <td>velikara</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Aydın</td>
@@ -60,6 +68,8 @@
                                         <td>123456</td>
                                         <td>aydinkaya@gmail.com</td>
                                         <td>aydinkaya</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                 </tbody>
                             </table>

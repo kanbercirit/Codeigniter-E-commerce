@@ -38,7 +38,7 @@
                                         <th>Ürün Adı</th>
                                         <th>Fiyatı</th>
                                         <th>Türü</th>
-                                        <th>#</th>
+                                        <th>Ekle/Sil</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
@@ -47,15 +47,43 @@
                                         <td>Galaxy Note 8</td>
                                         <td>3999</td>
                                         <td>Cep Telefonu</td>
-                                        <td>Cep Telefonu</td>
-                                        <td>Cep Telefonu</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
                                     <tr class="gradeX">
                                         <td>Iphone 7</td>
                                         <td>3300</td>
                                         <td>Cep Telefonu</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                    </tr> 
+                                    <tr class="gradeX">
+                                        <td>Iphone 7</td>
+                                        <td>3300</td>
                                         <td>Cep Telefonu</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                    </tr> 
+                                    <tr class="gradeX">
+                                        <td>Iphone 7</td>
+                                        <td>3300</td>
                                         <td>Cep Telefonu</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                    </tr> 
+                                    <tr class="gradeX">
+                                        <td>Iphone 7</td>
+                                        <td>3300</td>
+                                        <td>Cep Telefonu</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                    </tr> 
+                                    <tr class="gradeX">
+                                        <td>Iphone 7</td>
+                                        <td>3300</td>
+                                        <td>Cep Telefonu</td>
+                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr> 
                                 </tbody>
                             </table>
