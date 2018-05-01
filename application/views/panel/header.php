@@ -137,6 +137,20 @@
                             <a href="<?=site_url('adminpanel')?>"><i class="fa fa-dashboard fa-fw"></i> Anasayfa</a>
                         </li>
                         
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Admin<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?=site_url('adminpanel/page/admin/list')?>">Admin Listele</a>
+                                </li>
+                                <li>
+                                    <a href="<?=site_url('adminpanel/page/admin/create')?>">Admin Ekle</a>
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
                          <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kullanıcılar<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -171,6 +185,34 @@
                                 </li>
                                 <li>
                                     <a href="<?=site_url('adminpanel/page/order/create')?>">Sipariş Ekle</a>
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kategori<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?=site_url('adminpanel/page/category/list')?>">Kategoriler</a>
+                                </li>
+                                <li>
+                                    <a href="<?=site_url('adminpanel/page/category/create')?>">Kategori Ekle</a>
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Markalar<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?=site_url('adminpanel/page/brand/list')?>">Markalar</a>
+                                </li>
+                                <li>
+                                    <a href="<?=site_url('adminpanel/page/brand/create')?>">Marka Ekle</a>
                                 </li>
                                 
                             </ul>
