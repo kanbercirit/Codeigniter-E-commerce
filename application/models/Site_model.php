@@ -94,4 +94,35 @@ class Site_model extends ci_model
 		return $this->db->query("insert into comments (user_id,product_id, comment) values ('$user_id','$product_id', '$comment'");
 	}
 
+	function user_update($user,$username,$name,$surname,$password){
+		$this->db->where('username', $username);
+		$isUsername = $this->db->get('users');
+
+		if($isUsername->num_rows() > 0)
+			return -1; // username var
+		else
+			$userUpdate = array('username' => $username, 'name' => $name, 'surname' => $surname, 'password' => $password);
+			$this->db->where('id', $user);
+			return $this->db->update('users', $userUpdate);
+	}
+
+	function add_bill($user,$address,$code,$country,$state, $phone){
+		$this->db->where('user_id', $user);
+		$isUser = $this->db->get('bill');
+
+		if($isUser->num_rows() == 1){
+			$info = array('address' => $address, 'code' => $code, 'country' => $country, 'state' => $state, 'phone' => $phone);
+			$this->db->where('user_id', $user);
+			return $this->db->update('bill', $info);
+		}
+		else{
+			$info = array('user_id'=>$user, 'address' => $address, 'code' => $code, 'country' => $country, 'state' => $state, 'phone' => $phone);
+			return $this->db->insert('bill', $info);
+		}
+	}
+
+	function user_info($user_id){
+		return $this->db->query("select * from bill inner join users on users.id = bill.user_id where bill.user_id =$user_id")->row();
+	}
+
 }

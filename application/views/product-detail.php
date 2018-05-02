@@ -80,7 +80,7 @@
                                 <span>
                                     <span>US $<?=$product->price?></span>
                                     <label>Quantity:</label>
-                                    <input type="text" value="3" />
+                                    <input type="text" name="quantity" value="3" />
                                     <?php if($_SESSION['user'] != null) :?>
                                              <button type="button" class="btn btn-fefault cart">
                                         <i class="fa fa-shopping-cart"></i>
@@ -118,13 +118,10 @@
                             
                             <div class="tab-pane fade active in" id="reviews" >
                                 <div class="col-sm-12">
-                                    <ul>
-                                        <li><a href=""><i class="fa fa-user"></i><?=$comment->name?></a></li> 
-                                    </ul>
                                     <p><?=$comment->comment?></p>
                                     <p><b>Yorum yapın</b></p>
                                     
-                                    <form action="#">
+                                    <form action="<?=site_url('site/add_comment/'.$product->id)?>" method="post">
                                         <textarea name="comment" ></textarea>
                                         <button type="button" class="btn btn-default pull-right">
                                             Gönder
@@ -135,7 +132,7 @@
                             
                         </div>
                     </div><!--/category-tab-->
-                    
+                    <?php if(FALSE): ?>
                     <div class="recommended_items"><!--recommended_items-->
                         <h2 class="title text-center">recommended items</h2>
                         
@@ -226,7 +223,7 @@
                               </a>          
                         </div>
                     </div><!--/recommended_items-->
-                    
+                    <?php endif;?>
                 </div>
 				
 				

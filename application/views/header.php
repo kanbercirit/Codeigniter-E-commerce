@@ -38,9 +38,9 @@
 							<ul class="nav navbar-nav">
 								<?php if($_SESSION['user'] !== null) : ?>
 								<li><a href="<?=site_url('site/page/settings')?>"><i class="fa fa-user"></i> Account</a></li> 
-								<?php endif; ?>
 								<li><a href="<?=site_url('site/page/checkout')?>"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="<?=site_url('site/page/cart')?>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<?php endif; ?>
 								<?php if($_SESSION['user'] == null) : ?>
 								<li><a href="<?=site_url('site/page/login')?>"><i class="fa fa-lock"></i> Login</a></li>
 								<?php endif; ?>

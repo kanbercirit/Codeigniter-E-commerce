@@ -10,7 +10,7 @@
 											<h2>$<?=$product->price?></h2>
 											<p><?=$product->name?></p>
 											<?php if($_SESSION['user'] != null) :?>
-											<a href="<?=site_url('site/product_detail/'.$product->id)?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="<?=site_url('site/add_baskets/'.$product->id)?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										<?php endif;?>
 											<a href="<?=site_url('site/product_detail/'.$product->id)?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Detay</a>
 										</div>

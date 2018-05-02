@@ -16,7 +16,7 @@
 						<?php foreach ($baskets as $basket) :?> 
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="<?=site_url('images/'.$baske" alt=""></a>
+								<a href=""><img src="<?=site_url('images/'.$basket->image)?>" alt=""></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href=""><?=$basket->product_name?></a></h4>

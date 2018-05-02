@@ -3,74 +3,53 @@
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
 				  <li><a href="#">Anasayfa</a></li>
-				  <li class="active">Check out</li>
+				  <li class="active">Kullanıcı Ayarları</li>
 				</ol>
 			</div><!--/breadcrums-->
 
 			 
-
-			
-
+			<?php if($msg) : ?>
+			<div class="row">
+                <div class="register-req">
+                <p><?=$msg?></p>
+            </div>
+        <?php endif;?> 
 			<div class="shopper-informations">
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="shopper-info">
 							<p>Shopper Information</p>
-							<form>
-								<input type="text" placeholder="Display Name">
-								<input type="text" placeholder="User Name">
-								<input type="password" placeholder="Password">
-								<input type="password" placeholder="Confirm password">
-							</form>
-							<a class="btn btn-primary" href="">Get Quotes</a>
-							<a class="btn btn-primary" href="">Continue</a>
+							<form method="post" action="<?=site_url('site/user_update')?>">
+								<input type="text" name="name" value="<?=$user_info->name?>" placeholder="Display Name">
+								<input type="text" name="surname" value="<?=$user_info->surname?>" placeholder="surname">
+								<input type="text" name="username" value="<?=$user_info->username?>" placeholder="username">
+								<input type="password" name="password" placeholder="Password"> 
+								<button class="btn btn-primary" type="submit">Kaydet</button>
+							</form> 
 						</div>
 					</div>
 					<div class="col-sm-5 clearfix">
 						<div class="bill-to">
 							<p>Bill To</p>
 							<div class="form-one">
-								<form>
-									<input type="text" placeholder="Company Name">
-									<input type="text" placeholder="Email*">
-									<input type="text" placeholder="Title">
-									<input type="text" placeholder="First Name *">
-									<input type="text" placeholder="Middle Name">
-									<input type="text" placeholder="Last Name *">
-									<input type="text" placeholder="Address 1 *">
-									<input type="text" placeholder="Address 2">
-								</form>
+								<form method="post" action="<?=site_url('site/add_bill')?>">  
+									<input type="text" name="address" placeholder="Address 1">
+									<input type="text" name="code" placeholder="Zip / Postal Code *">
 							</div>
 							<div class="form-two">
-								<form>
-									<input type="text" placeholder="Zip / Postal Code *">
-									<select>
+								
+									
+									<select name="country">
 										<option>-- Country --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ucrane</option>
-										<option>Canada</option>
-										<option>Dubai</option>
+										<option value="1">United States</option>
+										<option value="2">Bangladesh</option> 
 									</select>
-									<select>
+									<select name="state">
 										<option>-- State / Province / Region --</option>
-										<option>United States</option>
-										<option>Bangladesh</option>
-										<option>UK</option>
-										<option>India</option>
-										<option>Pakistan</option>
-										<option>Ucrane</option>
-										<option>Canada</option>
-										<option>Dubai</option>
-									</select>
-									<input type="password" placeholder="Confirm password">
-									<input type="text" placeholder="Phone *">
-									<input type="text" placeholder="Mobile Phone">
-									<input type="text" placeholder="Fax">
-								</form>
+										<option value="1">United States</option>
+										<option value="2">Bangladesh</option> 
+									</select> 
+									<input type="text" name="phone" placeholder="Mobile Phone"> 
 							</div>
 						</div>
 					</div>
@@ -78,9 +57,10 @@
 						<div class="order-message">
 							<p>Shipping Order</p>
 							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
-							<label><input type="checkbox"> Shipping to bill address</label>
+							<label><button class="btn btn-primary" type="submit">Kaydet</button></label>
 						</div>	
-					</div>					
+					</div>	
+					</form>				
 				</div>
 			</div>
 		</div>

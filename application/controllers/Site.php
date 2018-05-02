@@ -27,11 +27,12 @@ class Site extends CI_Controller {
 		$data['category_brands'] = $this->site_model->category_brands();
 		$data['types'] = $this->site_model->types();
 		$data['products'] = $this->site_model->select_table('product');
+		$data['info'] = $this->site_model->user_info($_SESSION['user']->id); 
 		$this->load->view($page, $data);
 	}
 
 	function d(){
-		$this->db->query("alter table baskets add column quantity int");
+		print_r($this->db->query("select * from bill where user_id=1")->row());
 	}
 
 	function doRegister(){
@@ -62,6 +63,40 @@ class Site extends CI_Controller {
 		redirect('site');
 	}
 
+	function user_update(){
+		$name = $this->input->post('name');
+		$username = $this->input->post('username');
+		$surname = $this->input->post('surname');
+		$password = $this->input->post('password');
+		$password = $this->input->post('password');
+		$user = $_SESSION['user']->id;
+
+		$update = $this->site_model->user_update($user,$username,$name,$surname,$password);
+		if($update)
+			$data['msg'] = "Başarılı";
+		else if($update == -1)
+			$data['msg'] = "Kullanıcı adı mevcut";
+		else
+			$data['msg'] = "Hata";
+		$this->load->view('settings', $data);
+	}
+
+	function add_bill(){
+		$address = $this->input->post('address');
+		$code = $this->input->post('code');
+		$country = $this->input->post('country');
+		$state = $this->input->post('state');
+		$phone = $this->input->post('phone');
+		$user = $_SESSION['user']->id;
+
+		$update = $this->site_model->add_bill($user,$address,$code,$country,$state, $phone);
+		if($update)
+			$data['msg'] = "Başarılı";
+		else
+			$data['msg'] = "Hata";
+		$this->load->view('settings', $data);
+	}
+
 	function product_detail($id){
 		$data['categories'] = $this->site_model->categories();
 		$data['brand_items'] = $this->site_model->brand_items();
@@ -77,7 +112,7 @@ class Site extends CI_Controller {
 		$user_id = $_SESSION['user']->id;
 		$state = $this->site_model->add_baskets($user_id, $product_id, $quantity);
 		if($state)
-			echo "ok";
+			redirect('page/');
 		else
 			echo "error";
 	}
@@ -111,7 +146,7 @@ class Site extends CI_Controller {
 	}
 
 	function add_comment($product_id){
-
+		$user_id = $_SESSION['user']->id; 
 	}
 
 }

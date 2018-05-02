@@ -30,10 +30,12 @@
 	
 	<section>
 		<div class="container">
-			<div class="row">
+			<?php if(!$info) :?>
+                <div class="row">
                 <div class="register-req">
                 <p>Lütfen fatura adresi oluşturunuz.</p>
             </div><!--/register-req-->
+            <?php endif;?>
 				<?php $this->load->view('review')?> 
 				
 				
