@@ -12,10 +12,9 @@
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h2>YAVUZ E-TİCARET A.Ş.</h2>
+									<p>Etiketin Yarı Fiyatına Satışlarımız Başlamıştır. </p>
+									<button type="button" class="btn btn-default get">Hemen Satın Al</button>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
@@ -24,10 +23,9 @@
 							</div>
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>100% Responsive Design</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h2>YAVUZ E-TİCARET A.Ş.</h2>
+									<p>Mayıs Ayı İndirim Ayı</p>
+									<button type="button" class="btn btn-default get">Hemen Satın Al</button>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
@@ -37,10 +35,9 @@
 							
 							<div class="item">
 								<div class="col-sm-6">
-									<h1><span>E</span>-SHOPPER</h1>
-									<h2>Free Ecommerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h2>YAVUZ E-TİCARET A.Ş.</h2>
+									<p>Fabrikadan Halka</p>
+									<button type="button" class="btn btn-default get">Hemen Satın Al</button>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />

@@ -4,11 +4,11 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="image">Item</td>
+							<td class="image">Ürün</td>
 							<td class="description"></td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
+							<td class="price">Fiyat</td>
+							<td class="quantity">Adet</td>
+							<td class="total">Toplam</td>
 							<td></td>
 						</tr>
 					</thead>
