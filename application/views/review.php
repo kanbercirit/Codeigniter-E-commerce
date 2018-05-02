@@ -35,7 +35,7 @@
 								<p class="cart_total_price">59₺</p>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href="<?=site_url('site/delete/'.$basket->id)?>"><i class="fa fa-times"></i></a>
+								<button class="cart_quantity_delete" onClick="del()"> <i class="fa fa-times"></i></button>
 							</td>
 						</tr>
 						 <?php endforeach;?>

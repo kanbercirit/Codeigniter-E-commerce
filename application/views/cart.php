@@ -10,9 +10,15 @@
     <link href="<?=site_url('css/font-awesome.min.css')?>" rel="stylesheet">
     <link href="<?=site_url('css/prettyPhoto.css')?>" rel="stylesheet">
     <link href="<?=site_url('css/price-range.css')?>" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="<?=site_url('css/animate.css')?>" rel="stylesheet">
 	<link href="<?=site_url('css/main.css')?>" rel="stylesheet">
 	<link href="<?=site_url('css/responsive.css')?>" rel="stylesheet">
+    <script type="text/javascript">
+        function del(){
+            swal("Hello world!");
+        }
+    </script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
