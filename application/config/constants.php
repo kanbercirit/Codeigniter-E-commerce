@@ -86,4 +86,3 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 defined('EMAIL')      OR define('EMAIL', 'melihyavuz@gmail.com'); // highest automatically-assigned error code
 defined('TELNO')      OR define('TELNO', '5548725678'); // highest automatically-assigned error code
-
