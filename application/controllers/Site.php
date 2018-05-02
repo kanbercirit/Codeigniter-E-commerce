@@ -22,12 +22,14 @@ class Site extends CI_Controller {
 	}
 
 	function page($page){
+		if($page != 'login')
+			$data['info'] = $this->site_model->user_info($_SESSION['user']->id); 
 		$data['categories'] = $this->site_model->categories();
 		$data['brand_items'] = $this->site_model->brand_items();
 		$data['category_brands'] = $this->site_model->category_brands();
 		$data['types'] = $this->site_model->types();
 		$data['products'] = $this->site_model->select_table('product');
-		$data['info'] = $this->site_model->user_info($_SESSION['user']->id); 
+
 		$this->load->view($page, $data);
 	}
 
