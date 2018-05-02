@@ -5,8 +5,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>  <?=TELNO?></a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i>  <?=EMAIL?></a></li>
 							</ul>
 						</div>
 					</div>
@@ -37,12 +37,12 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<?php if($_SESSION['user'] !== null) : ?>
-								<li><a href="<?=site_url('site/page/settings')?>"><i class="fa fa-user"></i> Account</a></li> 
-								<li><a href="<?=site_url('site/page/checkout')?>"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="<?=site_url('site/page/cart')?>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="<?=site_url('site/page/settings')?>"><i class="fa fa-user"></i> Üyelik</a></li> 
+								<li><a href="<?=site_url('site/page/checkout')?>"><i class="fa fa-crosshairs"></i> Çıkış</a></li>
+								<li><a href="<?=site_url('site/page/cart')?>"><i class="fa fa-shopping-cart"></i> Sepet</a></li>
 								<?php endif; ?>
 								<?php if($_SESSION['user'] == null) : ?>
-								<li><a href="<?=site_url('site/page/login')?>"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="<?=site_url('site/page/login')?>"><i class="fa fa-lock"></i> Giriş</a></li>
 								<?php endif; ?>
 								<?php if($_SESSION['user'] != null) : ?>
 								<li><a href="<?=site_url('site/logout')?>"><i class="fa fa-lock"></i> Çıkış</a></li>
@@ -68,8 +68,8 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="<?=site_url()?>" class="active">Home</a></li>
-								<li><a href="<?=site_url('site/page/contact')?>">Contact</a></li>
+								<li><a href="<?=site_url()?>" class="active">Anasayfa</a></li>
+								<li><a href="<?=site_url('site/page/contact')?>">İletişim</a></li>
 							</ul>
 						</div>
 					</div>
