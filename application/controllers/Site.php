@@ -29,6 +29,7 @@ class Site extends CI_Controller {
 		$data['category_brands'] = $this->site_model->category_brands();
 		$data['types'] = $this->site_model->types();
 		$data['products'] = $this->site_model->select_table('product');
+		$data['user_info'] = $this->site_model->user_info($_SESSION['user']->id);
 
 		$this->load->view($page, $data);
 	}
@@ -89,9 +90,10 @@ class Site extends CI_Controller {
 		$country = $this->input->post('country');
 		$state = $this->input->post('state');
 		$phone = $this->input->post('phone');
+		$detail = $this->input->post('detail');
 		$user = $_SESSION['user']->id;
 
-		$update = $this->site_model->add_bill($user,$address,$code,$country,$state, $phone);
+		$update = $this->site_model->add_bill($user,$address,$code,$country,$state, $phone, $detail);
 		if($update)
 			$data['msg'] = "Başarılı";
 		else

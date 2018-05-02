@@ -13,7 +13,7 @@
                 <div class="register-req">
                 <p><?=$msg?></p>
             </div>
-        <?php endif;?> 
+        <?php endif;?>  
 			<div class="shopper-informations">
 				<div class="row">
 					<div class="col-sm-3">
@@ -33,8 +33,8 @@
 							<p>Bill To</p>
 							<div class="form-one">
 								<form method="post" action="<?=site_url('site/add_bill')?>">  
-									<input type="text" name="address" placeholder="Address 1">
-									<input type="text" name="code" placeholder="Zip / Postal Code *">
+									<input type="text" name="address" placeholder="Address 1" value="<?=$user_info->address?>">
+									<input type="text" name="code" placeholder="Zip / Postal Code *" value="<?=$user_info->code?>">
 							</div>
 							<div class="form-two">
 								
@@ -49,14 +49,14 @@
 										<option value="1">United States</option>
 										<option value="2">Bangladesh</option> 
 									</select> 
-									<input type="text" name="phone" placeholder="Mobile Phone"> 
+									<input type="text" name="phone" value="<?=$user_info->phone?>" placeholder="Mobile Phone"> 
 							</div>
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="order-message">
 							<p>Shipping Order</p>
-							<textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
+							<textarea name="detail" rows="16"><?=$user_info->detail?></textarea>
 							<label><button class="btn btn-primary" type="submit">Kaydet</button></label>
 						</div>	
 					</div>	

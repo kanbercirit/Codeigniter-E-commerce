@@ -106,17 +106,19 @@ class Site_model extends ci_model
 			return $this->db->update('users', $userUpdate);
 	}
 
-	function add_bill($user,$address,$code,$country,$state, $phone){
+	function add_bill($user,$address,$code,$country,$state, $phone, $detail){
 		$this->db->where('user_id', $user);
 		$isUser = $this->db->get('bill');
 
 		if($isUser->num_rows() == 1){
-			$info = array('address' => $address, 'code' => $code, 'country' => $country, 'state' => $state, 'phone' => $phone);
+			$info = array('address' => $address, 'code' => $code, 'country' => $country, 'state' => $state, 'phone' => $phone,
+		 'detail' => $detail);
 			$this->db->where('user_id', $user);
 			return $this->db->update('bill', $info);
 		}
 		else{
-			$info = array('user_id'=>$user, 'address' => $address, 'code' => $code, 'country' => $country, 'state' => $state, 'phone' => $phone);
+			$info = array('user_id'=>$user, 'address' => $address, 'code' => $code, 'country' => $country, 'state' => $state, 'phone' => $phone,
+		 'detail' => $detail);
 			return $this->db->insert('bill', $info);
 		}
 	}
