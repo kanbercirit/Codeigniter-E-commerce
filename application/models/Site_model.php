@@ -70,8 +70,8 @@ class Site_model extends ci_model
 		return $this->db->query("select * from $table where id = $id")->row();
 	}
 
-	function add_cart($user_id, $product_id){
-		return $this->db->query("insert into baskets (product_id,user_id) values ('$product_id', '$user_id'");
+	function add_cart($user_id, $product_id, $quantity){
+		return $this->db->query("insert into baskets (product_id,user_id, quantity) values ('$product_id', '$user_id', $quantity)");
 	}
 
 	function search($key){
@@ -83,7 +83,7 @@ class Site_model extends ci_model
 	}
 
 	function baskets($user_id){
-		return $this->db->query("SELECT product.name as product_name, quantity,product.image, product.price as price FROM `baskets` inner join product on product.id = baskets.product_id inner join users on users.id=baskets.user_id")->result();
+		return $this->db->query("SELECT product.name as product_name, baskets.quantity,product.image, product.price as price FROM `baskets` inner join product on product.id = baskets.product_id inner join users on users.id=baskets.user_id where baskets.user_id=$user_id")->result();
 	} 
 
 	function comments($id, $user_id){

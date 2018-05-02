@@ -31,7 +31,6 @@
 	<section>
 		<div class="container">
 			<div class="row"> 
-                <?php $this->load->view('info')?>
 				<?php $this->load->view('review')?>
 				
 				

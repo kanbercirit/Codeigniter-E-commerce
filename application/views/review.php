@@ -12,6 +12,7 @@
 							<td></td>
 						</tr>
 					</thead>
+
 					<tbody>
 						<?php foreach ($baskets as $basket) :?> 
 						<tr>
@@ -39,7 +40,7 @@
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
-						 <?php endif;?>
+						 <?php endforeach;?>
 					</tbody>
 				</table>
 			</div>

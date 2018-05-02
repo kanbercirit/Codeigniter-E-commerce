@@ -22,14 +22,18 @@ class Site extends CI_Controller {
 	}
 
 	function page($page){
-		if($page != 'login')
+		if($page != 'login'){
 			$data['info'] = $this->site_model->user_info($_SESSION['user']->id); 
-		$data['categories'] = $this->site_model->categories();
-		$data['brand_items'] = $this->site_model->brand_items();
-		$data['category_brands'] = $this->site_model->category_brands();
-		$data['types'] = $this->site_model->types();
-		$data['products'] = $this->site_model->select_table('product');
-		$data['user_info'] = $this->site_model->user_info($_SESSION['user']->id);
+			$data['products'] = $this->site_model->select_table('product'); 
+			$data['baskets'] = $this->site_model->baskets($_SESSION['user']->id);
+			$data['user_info'] = $this->site_model->user_info($_SESSION['user']->id);
+		}
+		else{
+			$data['categories'] = $this->site_model->categories();
+			$data['brand_items'] = $this->site_model->brand_items();
+			$data['category_brands'] = $this->site_model->category_brands();
+			$data['types'] = $this->site_model->types();
+		}
 
 		$this->load->view($page, $data);
 	}
@@ -114,9 +118,9 @@ class Site extends CI_Controller {
 
 	function add_baskets($product_id, $quantity){
 		$user_id = $_SESSION['user']->id;
-		$state = $this->site_model->add_baskets($user_id, $product_id, $quantity);
+		$state = $this->site_model->add_cart($user_id, $product_id, $quantity);
 		if($state)
-			redirect('page/');
+			redirect('site/page/cart');
 		else
 			echo "error";
 	}
