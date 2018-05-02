@@ -38,7 +38,7 @@
 							<ul class="nav navbar-nav">
 								<?php if($_SESSION['user'] !== null) : ?>
 								<li><a href="<?=site_url('site/page/settings')?>"><i class="fa fa-user"></i> Üyelik</a></li> 
-								<li><a href="<?=site_url('site/page/checkout')?>"><i class="fa fa-crosshairs"></i> Çıkış</a></li>
+								<li><a href="<?=site_url('site/page/checkout')?>"><i class="fa fa-crosshairs"></i> Alışverişi Tamamla</a></li>
 								<li><a href="<?=site_url('site/page/cart')?>"><i class="fa fa-shopping-cart"></i> Sepet</a></li>
 								<?php endif; ?>
 								<?php if($_SESSION['user'] == null) : ?>

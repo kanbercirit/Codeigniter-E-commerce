@@ -14,7 +14,7 @@
 								<div class="col-sm-6">
 									<h2>YAVUZ E-TİCARET A.Ş.</h2>
 									<p>Etiketin Yarı Fiyatına Satışlarımız Başlamıştır. </p>
-									<button type="button" class="btn btn-default get">Hemen Satın Al</button>
+									
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
@@ -25,7 +25,6 @@
 								<div class="col-sm-6">
 									<h2>YAVUZ E-TİCARET A.Ş.</h2>
 									<p>Mayıs Ayı İndirim Ayı</p>
-									<button type="button" class="btn btn-default get">Hemen Satın Al</button>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/girl2.jpg" class="girl img-responsive" alt="" />
@@ -37,7 +36,6 @@
 								<div class="col-sm-6">
 									<h2>YAVUZ E-TİCARET A.Ş.</h2>
 									<p>Fabrikadan Halka</p>
-									<button type="button" class="btn btn-default get">Hemen Satın Al</button>
 								</div>
 								<div class="col-sm-6">
 									<img src="images/home/girl3.jpg" class="girl img-responsive" alt="" />
