@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 01 May 2018, 23:48:45
+-- Üretim Zamanı: 02 May 2018, 17:38:25
 -- Sunucu sürümü: 10.1.16-MariaDB
 -- PHP Sürümü: 5.5.38
 
@@ -59,6 +59,30 @@ CREATE TABLE `baskets` (
 
 INSERT INTO `baskets` (`id`, `user_id`, `product_id`, `quantity`) VALUES
 (1, 1, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `bill`
+--
+
+CREATE TABLE `bill` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `code` int(11) DEFAULT NULL,
+  `country` int(11) DEFAULT NULL,
+  `state` int(11) DEFAULT NULL,
+  `phone` bigint(11) DEFAULT NULL,
+  `address` text,
+  `detail` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `bill`
+--
+
+INSERT INTO `bill` (`id`, `user_id`, `code`, `country`, `state`, `phone`, `address`, `detail`) VALUES
+(17, 1, 16800, 0, 0, 5362083578, 'asd', 'sss\r\n');
 
 -- --------------------------------------------------------
 
@@ -198,7 +222,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `username`) VALUES
-(1, NULL, NULL, '1', 'sezer@gmail.com', 'deneme');
+(1, 'sezer', 'doğru', '1', 'sezer@gmail.com', 'casablanka');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -214,6 +238,12 @@ ALTER TABLE `admin`
 -- Tablo için indeksler `baskets`
 --
 ALTER TABLE `baskets`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Tablo için indeksler `bill`
+--
+ALTER TABLE `bill`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -278,6 +308,11 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `baskets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Tablo için AUTO_INCREMENT değeri `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- Tablo için AUTO_INCREMENT değeri `brands`
 --
