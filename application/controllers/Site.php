@@ -137,6 +137,7 @@ class Site extends CI_Controller {
 		$data['category_brands'] = $this->site_model->category_brands();
 		$data['types'] = $this->site_model->types();
 		$data['products'] = $this->site_model->select_table('product');
+		$data['brands'] = $this->site_model->select_table('brands');
 		$data['product'] = $this->site_model->detail('product', $id);
 		$data['comments'] = $this->site_model->comments( $id);
 		$this->load->view('product-detail', $data);
@@ -179,9 +180,8 @@ class Site extends CI_Controller {
 		$this->load->view('cart',$data);
 	}
 
-	function add_comment($product_id){
-		$user_id = $_SESSION['user']->id;
-		$comment = $this->input->post('comment');
+	function add_comment($comment, $product_id){
+		$user_id = $_SESSION['user']->id; 
 		$add = $this->site_model->add_comment($comment, $user_id, $product_id);
 		if($add)
 			echo "ok";

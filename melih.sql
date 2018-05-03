@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 02 May 2018, 17:38:25
+-- Üretim Zamanı: 03 May 2018, 19:39:52
 -- Sunucu sürümü: 10.1.16-MariaDB
 -- PHP Sürümü: 5.5.38
 
@@ -38,7 +38,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `level`) VALUES
-(1, 'admin', '1', 1);
+(1, 'admin', '1', 1),
+(3, 'admin3', '1', 1),
+(4, 'admin5', '1', 1),
+(6, 'mert', '1', 2);
 
 -- --------------------------------------------------------
 
@@ -58,7 +61,13 @@ CREATE TABLE `baskets` (
 --
 
 INSERT INTO `baskets` (`id`, `user_id`, `product_id`, `quantity`) VALUES
-(1, 1, 1, 3);
+(2, 1, 1, 1),
+(7, 3, 2, 1),
+(9, 4, 1, 1),
+(11, 8, 1, 1),
+(16, 8, 5, 1),
+(17, 16, 7, 1),
+(18, 3, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -82,7 +91,10 @@ CREATE TABLE `bill` (
 --
 
 INSERT INTO `bill` (`id`, `user_id`, `code`, `country`, `state`, `phone`, `address`, `detail`) VALUES
-(17, 1, 16800, 0, 0, 5362083578, 'asd', 'sss\r\n');
+(17, 1, 16800, 0, 0, 5362083578, 'asd', 'denemed'),
+(18, 3, 16800, 0, 0, 0, 'bursa', ''),
+(19, 4, 16800, 0, 0, 0, 'bursa', ''),
+(20, 8, 16800, 0, 0, 0, 'bursa', '');
 
 -- --------------------------------------------------------
 
@@ -102,8 +114,8 @@ CREATE TABLE `brands` (
 
 INSERT INTO `brands` (`id`, `name`, `category_id`) VALUES
 (1, 'nike', 1),
-(2, 'adidas', 1),
-(3, 'deneme', 3);
+(2, '1', 1),
+(6, 'asus', 6);
 
 -- --------------------------------------------------------
 
@@ -121,8 +133,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`) VALUES
+(0, 'kid'),
 (1, 'spor'),
-(3, 'kid');
+(2, '1'),
+(4, 'Bilgisayar'),
+(6, 'Bilgisayar');
 
 -- --------------------------------------------------------
 
@@ -137,6 +152,15 @@ CREATE TABLE `comments` (
   `user_id` int(11) DEFAULT NULL,
   `comment_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `comments`
+--
+
+INSERT INTO `comments` (`id`, `comment`, `product_id`, `user_id`, `comment_date`) VALUES
+(1, 'sadasd', 5, 8, NULL),
+(13, 'sads', 8, 3, NULL),
+(15, 'sad', 8, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -176,8 +200,8 @@ CREATE TABLE `product` (
   `price` int(11) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
   `brand_id` int(11) DEFAULT NULL,
-  `sold` int(11) DEFAULT NULL,
-  `type` varchar(10) DEFAULT NULL,
+  `sold` int(11) DEFAULT '0',
+  `type` varchar(20) DEFAULT NULL,
   `image` text,
   `detail` varchar(101) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -187,8 +211,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `category_id`, `brand_id`, `sold`, `type`, `image`, `detail`) VALUES
-(1, 'ayakkabı', 1, 1, 1, 0, 'ayakkabı', NULL, NULL),
-(2, 'terlik', 0, 3, 2, 1, 'terlik', NULL, NULL);
+(7, 'deneme', 0, 1, 1, 0, 'Cep Telefonu', 'product12.jpg', 'aslkdsjlkd'),
+(8, 'bebek arabası', 100, 0, 1, 0, NULL, 'product12.jpg', 'sdsadklasdj');
 
 -- --------------------------------------------------------
 
@@ -222,7 +246,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `surname`, `password`, `email`, `username`) VALUES
-(1, 'sezer', 'doğru', '1', 'sezer@gmail.com', 'casablanka');
+(1, 'Sezer', 'DOĞRU', '11', 'sezer1@gmail.com', 'casablanka'),
+(3, 'test', 'doğru', '1', 'test@test.com', 'sezer'),
+(4, 'deneme', 'doğru', '1', 'test2@gmail.com', 'sezer1'),
+(5, 'sad', 'dsa', 'sa', 'asd@dsad.cp', 'sas'),
+(6, 'asdasd', 'asds', 'asdsad', 'dasdsa@dsa.com', 'asd'),
+(7, 'asdsa', NULL, 'sd', 'sd@f.com', NULL),
+(8, 'isim', '', '', '1@1.com', ''),
+(12, 'asd', 'dsa', 'd', 'zdlkjflkf@asd.com', 'adsd'),
+(13, 'sads', NULL, 'asdasd', 's@1.com', NULL),
+(14, 'met', 'ds', '1', 'sads@ds.dcom', 'sasas'),
+(15, 'deneme', 'deneme', 'deneme', 'deneme@deneme.com', 'deneme'),
+(16, 'sadlksj', NULL, '1', 'test@1.com', NULL),
+(17, 'net', 'sdd', 'dasda', 'aasds@dsadsa.com', '111111'),
+(18, 'adaksjdhjk', NULL, 'asdasd', 'sadas@asd.com', NULL);
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -302,32 +339,32 @@ ALTER TABLE `users`
 -- Tablo için AUTO_INCREMENT değeri `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Tablo için AUTO_INCREMENT değeri `baskets`
 --
 ALTER TABLE `baskets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- Tablo için AUTO_INCREMENT değeri `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- Tablo için AUTO_INCREMENT değeri `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Tablo için AUTO_INCREMENT değeri `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Tablo için AUTO_INCREMENT değeri `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- Tablo için AUTO_INCREMENT değeri `orders`
 --
@@ -342,7 +379,7 @@ ALTER TABLE `payment`
 -- Tablo için AUTO_INCREMENT değeri `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Tablo için AUTO_INCREMENT değeri `stok`
 --
@@ -352,7 +389,7 @@ ALTER TABLE `stok`
 -- Tablo için AUTO_INCREMENT değeri `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

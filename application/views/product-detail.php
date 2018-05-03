@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Yavuz Ticaret</title>
     <link href="<?=site_url('css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?=site_url('css/font-awesome.min.css')?>" rel="stylesheet">
     <link href="<?=site_url('css/prettyPhoto.css')?>" rel="stylesheet">
@@ -17,6 +17,10 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
+    <!-- This is what you need -->
+    <script src="<?=site_url('dist/sweetalert-dev.js')?>"></script>
+    <link rel="stylesheet" href="<?=site_url('dist/sweetalert.css')?>">
+
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -100,11 +104,11 @@
                                     <?php if($_SESSION['user']):?>
                                     <p><b>Yorum yapın</b></p>
                                     
-                                    <form action="<?=site_url('site/add_comment/'.$product->id)?>" method="post">
-                                        <textarea name="comment" ></textarea>
-                                        <button type="submit" class="btn btn-default pull-right">
+                                    <form>
+                                        <textarea name="comment" id="comment"></textarea>
+                                        <a onClick="pay()" class="btn btn-default pull-right">
                                             Gönder
-                                        </button>
+                                        </a>
                                     </form>
                                 </div>
                             </div>
@@ -112,7 +116,23 @@
                         </div>
                     </div></div>
 				
-				
+				    <script type="text/javascript">
+                    function pay(){
+                        var comment = document.getElementById('comment').value;
+                        $.ajax("<?=site_url('site/add_comment/')?>" + comment + "/<?=$product->id?>", {
+                              success: function(data) {
+                                 swal({title:"Yorum yaptığınız için teşekkürler!",type:'success'},function(onConfirm){
+                                    if(onConfirm){
+                                        window.location.href="<?=site_url('site/product_detail/'.$product->id)?>";
+                                    }
+                                });
+                              },
+                              error: function(err) {
+                                 //swal("Hata!", "Yorum eklenirken bir hata oluştu!", "danger");
+                              }
+                           });
+                        }
+                </script>
 			</div>
 		</div>
 	</section>
