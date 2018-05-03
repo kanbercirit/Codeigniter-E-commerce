@@ -34,6 +34,7 @@ class AdminPanel extends CI_Controller {
 		$data['products'] = $this->db->query("select product.id as id,detail,product.name as name, product.price as price, brands.name as brand,categories.name as category from product inner join brands on product.brand_id=brands.id inner join categories on categories.id=product.category_id")->result();
 		$data['orders'] = $this->db->get('orders')->result();
 		$data['categories'] = $this->db->get('categories')->result();
+		$data['comments'] = $this->db->get('comments')->result();
 		$data['brands'] = $this->db->get('brands')->result();
 		$this->load->view('panel/'.$folder.'/'.$file, $data);
 	}
@@ -267,6 +268,14 @@ class AdminPanel extends CI_Controller {
 			redirect('adminpanel/page/user/list');
 		else
 			echo "ok";
+	}
+
+	function del_comment($id){
+		$del=$this->db->query("delete from comments where id=$id");
+		if($del)
+			echo "ok";
+		else
+			echo "error";
 	}
 
 }

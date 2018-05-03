@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Gökkuşağı Tic. A.Ş.</title>
+    <title>Yavuz Tic. A.Ş.</title>
      
     <link href="<?=site_url('vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
     
@@ -27,7 +27,8 @@
 
     <!-- Custom Fonts -->
     <link href="<?=site_url('vendor/font-awesome/css/font-awesome.min.css')?>" rel="stylesheet" type="text/css">
-
+<script src="<?=site_url('dist/sweetalert-dev.js')?>"></script>
+    <link rel="stylesheet" href="<?=site_url('dist/sweetalert.css')?>">
     
 
 
@@ -150,6 +151,10 @@
                                 </li>
                                 
                             </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="<?=site_url('adminpanel/page/comments/list')?>"><i class="fa fa-sitemap fa-fw"></i>Yorumlar</a>
                             <!-- /.nav-second-level -->
                         </li>
                        

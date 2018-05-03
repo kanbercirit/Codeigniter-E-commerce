@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="<?=site_url()?>"><img src="<?=site_url('images/home/logo.gif')?>" alt="" /></a>
+							<a href="<?=site_url()?>"><img src="<?=site_url('images/home/logo.png')?>" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-sm-8">
