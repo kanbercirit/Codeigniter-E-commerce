@@ -9,22 +9,21 @@
                 </div>
                 <!-- /.row -->
 
-        <form>    
+        <form action="<?=site_url('adminpanel/add_brand/')?>" method="post">    
             <div class="panel-body">
                 <div class="form-group">
 					<label>Marka Adı</label>
-					<input class="form-control" placeholder="Marka Adınızı Giriniz">
+					<input class="form-control" placeholder="Marka Adınızı Giriniz" name="name">
                 </div>
                 <div class="form-group">
-					<label>Menşei</label>
-					<input class="form-control" placeholder="Menşei Giriniz">
+					<label>Kategori</label>
+					<select name="category_id" class="form-control">
+                        <?php foreach ($categories as $category) :?>
+                        <option value="<?=$category->id?>"><?=$category->name?></option> 
+                            <?php endforeach;?>
+                    </select>
                 </div>
-                <div class="form-group">
-					<label>Marka Türü</label>
-					<input class="form-control" placeholder="Türünü Giriniz">
-                </div>
-                <br>
-					<button type="button" class="btn btn-primary">Kaydet</button>
+					<button type="submit" class="btn btn-primary">Kaydet</button>
                 </div>
             </div>
           			

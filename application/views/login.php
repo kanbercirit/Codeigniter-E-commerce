@@ -27,9 +27,14 @@
 <body> 
 	<?php $this->load->view('header')?> 
 	
-	
 	<section>
 		<div class="container">
+            <?php if($result) :?>
+                <div class="row">
+                <div class="register-req">
+                <p><?=$result?></p>
+            </div><!--/register-req-->
+            <?php endif;?>
 			<div class="row">
 				<section id="form"><!--form-->
         <div class="container">

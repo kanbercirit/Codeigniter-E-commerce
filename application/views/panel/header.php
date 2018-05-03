@@ -9,10 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Doğru Tic. A.Ş.</title>
+    <title>Gökkuşağı Tic. A.Ş.</title>
      
     <link href="<?=site_url('vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
-
+    
+      <!-- This is what you need -->
+    <script src="<?=site_url('dist/sweetalert-dev.js')?>"></script>
+    <link rel="stylesheet" href="<?=site_url('dist/sweetalert.css')?>">
     <!-- MetisMenu CSS -->
     <link href="<?=site_url('vendor/metisMenu/metisMenu.min.css')?>" rel="stylesheet">
 
@@ -43,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Paneli</a>
+                <a class="navbar-brand" href="<?=site_url('adminpanel')?>">Admin Paneli</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -66,8 +69,8 @@
                     <ul class="nav" id="side-menu">
                         <li>
                             <a href="<?=site_url('adminpanel')?>"><i class="fa fa-dashboard fa-fw"></i>Anasayfa</a>
-                        </li>
-                        
+                        </li> 
+                        <?php if($_SESSION['admin']->level ==1):?>
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i>Kullanıcı<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -81,7 +84,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-
+                            <?php endif;?>
                          <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i>Müşteriler<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

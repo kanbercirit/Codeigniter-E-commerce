@@ -43,13 +43,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($admins as $admin) :?>
                                     <tr class="gradeX">
-                                        <td>martan</td>
-                                        <td>123456</td>
+                                        <td><?=$admin->username?></td>
+                                        <td><?=$admin->password?></td>
+                                        <?php if($admin->level == 1) :?>
                                         <td>Yönetici</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                    <?php else:?>
+                                        <td>Geliştirici</td>
+                                        <?php endif;?>
+                                        <td><a href="<?=site_url('adminpanel/update/user/'.$admin->id)?>" class="btn btn-success btn-circle"><i class="fa fa-link"></i></a>
+                                            <?php if($_SESSION['admin']->level == 1) :?>
                                         <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                        <?php endif;?>
+                                        
                                     </tr>
+                                <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>

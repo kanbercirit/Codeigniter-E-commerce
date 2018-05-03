@@ -9,21 +9,21 @@
                 </div>
                 <!-- /.row -->
 
-        <form>    
+        <form action="<?=site_url('adminpanel/add_user')?>" method="post">    
             <div class="row">
                 <div class="form-group">
                     <label>Kullanıcı Adı</label>
-                    <input class="form-control" placeholder="Kullanıcı Adını Giriniz">
+                    <input class="form-control" name="username" placeholder="Kullanıcı Adını Giriniz">
                 </div>
                 <div class="form-group">
                     <label>Şifre</label>
-                    <input class="form-control" placeholder="Şifre Giriniz">
+                    <input class="form-control" name="password" placeholder="Şifre Giriniz">
                 </div>
                 <div class="form-group">
                                             <label>Rol Seçiniz</label>
-                                            <select class="form-control">
-                                                <option>Yönetici</option>
-                                                <option>Geliştirici</option>
+                                            <select class="form-control" name="level">
+                                                <option value="1">Yönetici</option>
+                                                <option value="2">Geliştirici</option>
                                             </select>
             </div>
           <button type="submit" class="btn btn-default">Kaydet</button>

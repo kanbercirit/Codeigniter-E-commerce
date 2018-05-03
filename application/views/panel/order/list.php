@@ -7,7 +7,7 @@
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
-               
+                <?php print_r($data)?>
            <div class="col-lg-4">
                     <div class="panel panel-green">
                         <div class="panel-heading">

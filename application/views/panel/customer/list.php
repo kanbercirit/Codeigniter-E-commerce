@@ -44,33 +44,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($customers as $customer) :?> 
                                     <tr class="gradeX">
-                                        <td>Ali</td>
-                                        <td>Ak</td>
-                                        <td>123456</td>
-                                        <td>aliak@gmail.com</td>
-                                        <td>aliak</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                        <td><?=$customer->name?></td>
+                                        <td><?=$customer->surname?></td>
+                                        <td><?=$customer->password?></td>
+                                        <td><?=$customer->email?></td>
+                                        <td><?=$customer->username?></td> 
+                                        <td><a href="<?=site_url('adminpanel/update/customer/'.$customer->id)?>" class="btn btn-success btn-circle"><i class="fa fa-link"></i></a>
+                                            <?php if($_SESSION['admin']->level == 1) :?>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
+                                        <?php endif;?>
+                                        <td>
                                     </tr>
-                                    <tr class="gradeX">
-                                        <td>Veli</td>
-                                        <td>Kara</td>
-                                        <td>123456</td>
-                                        <td>velikara@gmail.com</td>
-                                        <td>velikara</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Aydın</td>
-                                        <td>Kaya</td>
-                                        <td>123456</td>
-                                        <td>aydinkaya@gmail.com</td>
-                                        <td>aydinkaya</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr>
+                                    <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>

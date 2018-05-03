@@ -13,15 +13,17 @@
     <link href="<?=site_url('css/animate.css')?>" rel="stylesheet">
 	<link href="<?=site_url('css/main.css')?>" rel="stylesheet">
 	<link href="<?=site_url('css/responsive.css')?>" rel="stylesheet">
+     <script src="<?=site_url('dist/sweetalert-dev.js')?>"></script>
+    <link rel="stylesheet" href="<?=site_url('dist/sweetalert.css')?>">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    
+      <!-- This is what you need -->
+    <script src="<?=site_url('dist/sweetalert-dev.js')?>"></script>
+    <link rel="stylesheet" href="<?=site_url('dist/sweetalert.css')?>">
+   
 </head><!--/head-->
 
 <body> 
@@ -30,10 +32,18 @@
 	
 	<section>
 		<div class="container">
-			<div class="row"> 
+			<div class="row">  
 				<?php $this->load->view('review')?>
-				
-				
+                <script type="text/javascript">
+                    function pay(){
+                        swal({title:"Ödeme yapıldı!",type:'success'},function(onConfirm){
+                            if(onConfirm){
+                                window.location.href="<?=site_url()?>";
+                            }
+                        });
+                        }
+                </script>
+				<div style="float:right;margin-bottom: 10px"><a class="btn btn-primary" onClick="pay()">Alışverişi tamamla</a></div>
 			</div>
 		</div>
 	</section>

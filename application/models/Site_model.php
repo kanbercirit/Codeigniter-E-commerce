@@ -31,9 +31,9 @@ class Site_model extends ci_model
 		return $this->db->query("select * from $table")->result();
 	}
 
-	function doRegister($username, $password, $name){ 
+	function doRegister($email, $password, $name){ 
 
-		$this->db->where('username', $username);
+		$this->db->where('email', $email);
 		$this->db->where('password', $password);
 		$isUser = $this->db->get('users');
 		// eğer bu kullanıcı adı şifre varsa
@@ -41,7 +41,7 @@ class Site_model extends ci_model
 			$msg = "Bu kullanıcı mevcut";
 		}
 		else{
-			$user = array('username' => $username , 'password' => $password, 'name' => $name );
+			$user = array('email' => $email , 'password' => $password, 'name' => $name );
 			$insert = $this->db->insert('users', $user);
 			if($insert)
 				$msg="Kayıt başarılı!";
@@ -83,15 +83,15 @@ class Site_model extends ci_model
 	}
 
 	function baskets($user_id){
-		return $this->db->query("SELECT product.name as product_name, baskets.quantity,product.image, product.price as price FROM `baskets` inner join product on product.id = baskets.product_id inner join users on users.id=baskets.user_id where baskets.user_id=$user_id")->result();
+		return $this->db->query("SELECT product.name as product_name, baskets.id as id, baskets.quantity,product.image, product.price as price FROM `baskets` inner join product on product.id = baskets.product_id inner join users on users.id=baskets.user_id where baskets.user_id=$user_id")->result();
 	} 
 
-	function comments($id, $user_id){
-		return $this->db->query("select * from comments inner join users on users.id=comments.user_id where product_id=$id")->result();
+	function comments($id){
+		return $this->db->query("select * from comments inner join users on users.id=comments.user_id  where product_id=$id")->result();
 	}
 
 	function add_comment($comment, $user_id, $product_id){
-		return $this->db->query("insert into comments (user_id,product_id, comment) values ('$user_id','$product_id', '$comment'");
+		return $this->db->query("insert into comments (user_id,product_id, comment) values ('$user_id','$product_id', '$comment')");
 	}
 
 	function user_update($user,$username,$name,$surname,$password){
@@ -125,6 +125,11 @@ class Site_model extends ci_model
 
 	function user_info($user_id){
 		return $this->db->query("select * from bill inner join users on users.id = bill.user_id where bill.user_id =$user_id")->row();
+	}
+
+	function del_cart($id){
+		$this->db->where('id', $id);
+		return $this->db->query("delete from baskets where id=$id");
 	}
 
 }

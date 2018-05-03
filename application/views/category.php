@@ -39,8 +39,8 @@
 							<h2>Markalar</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<?php foreach ($brand_items as $brand) :?>
-									<li><a href="<?=site_url('site/filter/brands/'.$brand->name)?>"> <span class="pull-right">(<?=$brand->total?>)</span><?=$brand->name?></a></li> 
+									<?php foreach ($brands as $brand) :?>
+									<li><a href="<?=site_url('site/filter/brands/'.$brand->name)?>"> <?=$brand->name?></a></li> 
 								<?php endforeach;?>
 								</ul>
 							</div>

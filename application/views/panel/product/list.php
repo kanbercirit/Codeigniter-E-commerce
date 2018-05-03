@@ -37,54 +37,28 @@
                                     <tr>
                                         <th>Ürün Adı</th>
                                         <th>Fiyatı</th>
-                                        <th>Türü</th>
+                                        <th>Kategorisi</th>
+                                        <th>Markası</th>
+                                        <th>Açıklama</th>
                                         <th>Ekle/Sil</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($products as $product) :?> 
                                     <tr class="gradeX">
-                                        <td>Galaxy Note 8</td>
-                                        <td>3999</td>
-                                        <td>Cep Telefonu</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                        <td><?=$product->name?></td>
+                                        <td><?=$product->price?></td>
+                                        <td><?=$product->category?></td>
+                                        <td><?=$product->brand?></td>
+                                        <td><?=$product->detail?></td>
+                                        <td><a href="<?=site_url('adminpanel/update/product/'.$product->id)?>" class="btn btn-success btn-circle"><i class="fa fa-link"></i></a>
+                                            <?php if($_SESSION['admin']->level==1):?>
+                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
+                                    <?php endif;?>
+                                        <td>
                                     </tr>
-                                    <tr class="gradeX">
-                                        <td>Iphone 7</td>
-                                        <td>3300</td>
-                                        <td>Cep Telefonu</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr> 
-                                    <tr class="gradeX">
-                                        <td>Iphone 7</td>
-                                        <td>3300</td>
-                                        <td>Cep Telefonu</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr> 
-                                    <tr class="gradeX">
-                                        <td>Iphone 7</td>
-                                        <td>3300</td>
-                                        <td>Cep Telefonu</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr> 
-                                    <tr class="gradeX">
-                                        <td>Iphone 7</td>
-                                        <td>3300</td>
-                                        <td>Cep Telefonu</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr> 
-                                    <tr class="gradeX">
-                                        <td>Iphone 7</td>
-                                        <td>3300</td>
-                                        <td>Cep Telefonu</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr> 
+                                <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>

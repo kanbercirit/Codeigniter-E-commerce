@@ -36,36 +36,18 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Kategori Adı</th>
-                                        <th>Kategori Türü</th>
+                                        <th>Kategori Adı</th> 
                                         <th>Ekle/Sil<th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($categories as $category) :?>
                                     <tr class="gradeX">
-                                        <td>Cep Telefonu</td>
-                                        <td>Elektroink Eşya</td>
+                                        <td><?=$category->name?></td> 
                                         <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
                                         <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
-                                    <tr class="gradeX">
-                                        <td>Yazıcı</td>
-                                        <td>Elektronik Eşya</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Dizüstü Bilgisayar</td>
-                                        <td>Elektronik Eşya</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Kitap</td>
-                                        <td>Kişisel Ürün</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                             </tr>
+                                <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>

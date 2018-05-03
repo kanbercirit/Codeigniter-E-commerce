@@ -9,21 +9,13 @@
                 </div>
                 <!-- /.row -->
 
-        <form>    
+        <form action="<?=site_url('adminpanel/add_category')?>" method="post">    
             <div class="panel-body">
                 <div class="form-group">
 					<label>Kategori Adı</label>
-					<input class="form-control" placeholder="Kategori Adını Giriniz">
+					<input name="name" class="form-control" placeholder="Kategori Adını Giriniz">
                 </div>
-                <div class="form-group">
-                                            <label>Kategori Türü Seçiniz</label>
-                                            <select class="form-control">
-                                                <option>Elektronik Eşya</option>
-                                                <option>Kıyafet</option>
-                                                <option>Kişisel Ürün</option>
-                                            </select>
-                                            <br>
-                    <button type="button" class="btn btn-primary">Ekle</button>
+                <button type="submit" class="btn btn-primary">Ekle</button>
             </div>
           			
         </form> 

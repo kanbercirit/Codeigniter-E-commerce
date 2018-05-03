@@ -16,26 +16,52 @@ class Site extends CI_Controller {
 		$data['category_brands'] = $this->site_model->category_brands();
 		$data['types'] = $this->site_model->types();
 		$data['products'] = $this->site_model->select_table('product');
+		$data['brands'] = $this->site_model->select_table('brands');
 		$data['content'] = "En çok Satılan Ürünler";
 		$this->load->view('site', $data);
 		//print_r($data);
 	}
 
 	function page($page){
-		if($page != 'login'){
+		if($page != 'login' && $_SESSION['user'] && $page !== 'contact' ){
 			$data['info'] = $this->site_model->user_info($_SESSION['user']->id); 
 			$data['products'] = $this->site_model->select_table('product'); 
 			$data['baskets'] = $this->site_model->baskets($_SESSION['user']->id);
 			$data['user_info'] = $this->site_model->user_info($_SESSION['user']->id);
-		}
-		else{
+			$data['brands'] = $this->site_model->select_table('brands');
 			$data['categories'] = $this->site_model->categories();
 			$data['brand_items'] = $this->site_model->brand_items();
 			$data['category_brands'] = $this->site_model->category_brands();
 			$data['types'] = $this->site_model->types();
 		}
-
+		else{
+			$data['categories'] = $this->site_model->categories();
+			$data['brand_items'] = $this->site_model->brand_items();
+			$data['brands'] = $this->site_model->select_table('brands');
+			$data['category_brands'] = $this->site_model->category_brands();
+			$data['types'] = $this->site_model->types();
+		}
+		if(!$_SESSION['user']){
+			if($page =='cart' || $page=='checkout' || $page=='settings'){
+				redirect('site/page/login');
+			}
+			else{
 		$this->load->view($page, $data);
+		}
+			
+		}
+		else{
+		$this->load->view($page, $data);
+		}
+	}
+
+	function add_order($product_id){
+		$user_id = $_SESSION['user']->id;
+		$date=new Date();
+		$quantity = $this->input->post('quantity');
+
+		$order = array('product_id' => $product_id , 'date'=>$date, 'user_id'=>$user_id,'piece'=>$quantity );
+		print_r($order);
 	}
 
 	function d(){
@@ -43,12 +69,12 @@ class Site extends CI_Controller {
 	}
 
 	function doRegister(){
-		$username = $this->input->post('username');
+		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$name = $this->input->post('name');
 
-		$result = $this->site_model->doRegister($username, $password, $name);
-		echo $result;
+		$data['result'] = $this->site_model->doRegister($email, $password, $name);
+		$this->load->view('login',$data);
 	}
 
 	function doLogin(){
@@ -61,7 +87,7 @@ class Site extends CI_Controller {
 			redirect('site');
 		}
 		else{
-			echo "Kullanıcı adı veya şifre yanlış!";
+			$data['msg']= "Kullanıcı adı veya şifre yanlış!";
 		}
 	}
 
@@ -154,7 +180,21 @@ class Site extends CI_Controller {
 	}
 
 	function add_comment($product_id){
-		$user_id = $_SESSION['user']->id; 
+		$user_id = $_SESSION['user']->id;
+		$comment = $this->input->post('comment');
+		$add = $this->site_model->add_comment($comment, $user_id, $product_id);
+		if($add)
+			echo "ok";
+		else
+			echo "error";
 	}
+
+	function del_cart($id){
+		$del = $this->site_model->del_cart($id);
+		if($del)
+			echo "ok";
+		else
+			echo "error";
+	} 
 
 }

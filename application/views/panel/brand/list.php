@@ -33,41 +33,18 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Marka Adı</th>
-                                        <th>Menşei</th>
-                                        <th>Türü</th>
+                                        <th>Marka Adı</th> 
                                         <th>Ekle/Sil<th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($brands as $brand):?> 
                                     <tr class="gradeX">
-                                        <td>HP</td>
-                                        <td>Amerika Birleşik Devletleri</td>
-                                        <td>Elektronik Eşya</td>
+                                        <td><?=$brand->name?></td> 
                                         <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
                                         <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
                                     </tr>
-                                    <tr class="gradeX">
-                                        <td>Iphone</td>
-                                        <td>Amerika Birleşik Devletleri</td>
-                                        <td>Elektronik Eşya</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Samsung</td>
-                                        <td>Güney Kore</td>
-                                        <td>Elektronik Eşya</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Canon</td>
-                                        <td>Amerika Birleşik Devletleri</td>
-                                        <td>Elektronik Eşya</td>
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
-                                    </tr>
+                                            <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>

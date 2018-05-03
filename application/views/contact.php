@@ -32,12 +32,7 @@
 		<div class="container">
 			<div class="row">
 				<div id="contact-page" class="container">
-    	<div class="bg">
-	    	<div class="row">    		
-	    		<div class="col-sm-12">    			   			
-					<h2 class="title text-center">İletişim <strong>Us</strong></h2>    			    				    				
-				</div>			 		
-			</div>    	
+    	<div class="bg"> 
     		<div class="row">  	
 	    		<div class="col-sm-8">
 	    			<div class="contact-form">

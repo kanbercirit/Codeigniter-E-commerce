@@ -28,8 +28,97 @@ class AdminPanel extends CI_Controller {
 		}
 	} 
 	 
-	function page($folder, $file){
-		$this->load->view('panel/'.$folder.'/'.$file);
+	function page($folder, $file){ 
+		$data['admins'] = $this->db->get('admin')->result();
+		$data['customers'] = $this->db->get('users')->result();
+		$data['products'] = $this->db->query("select product.id as id,detail,product.name as name, product.price as price, brands.name as brand,categories.name as category from product inner join brands on product.brand_id=brands.id inner join categories on categories.id=product.category_id")->result();
+		$data['orders'] = $this->db->get('orders')->result();
+		$data['categories'] = $this->db->get('categories')->result();
+		$data['brands'] = $this->db->get('brands')->result();
+		$this->load->view('panel/'.$folder.'/'.$file, $data);
+	}
+
+	function update($folder, $id){
+		if($folder == 'user'){
+			$table ='admin';
+		}
+		else if($folder=='customer'){
+			$table="users";
+		}
+		else if($folder=='product'){
+			$table="product";
+		}
+		$this->db->where('id', $id);
+		$data['data'] = $this->db->get($table)->row();
+		$this->load->view('panel/'.$folder.'/update',$data);
+	}
+
+	/**
+	Admin güncelleme
+	*/
+	function update_user($id){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$level = $this->input->post('level');
+
+		$this->db->where('id', $id); 
+		$isUser = $this->db->get('admin');
+
+		if($isUser->num_rows()==1){
+			$admin = array('username' => $username , 'password' => $password, 'level' => $level );
+			$this->db->where('id',$id);
+			$update=$this->db->update('admin',$admin);
+			if($update)
+				redirect('adminpanel/page/user/list');
+			else
+				echo "hata";
+		}
+	}
+
+	/**
+	Müşteri güncelleme
+	*/
+	function update_customer($id){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$name = $this->input->post('name');
+		$surname = $this->input->post('surname');
+		$email = $this->input->post('email');
+
+		$this->db->where('id', $id); 
+		$isUser = $this->db->get('users');
+
+		if($isUser->num_rows()==1){
+			$user = array('username' => $username , 'password' => $password, 'name' => $name, 'surname'=>$surname,'email'=>$email );
+			$this->db->where('id',$id);
+			$update=$this->db->update('users',$user);
+			if($update)
+				redirect('adminpanel/page/customer/list');
+			else
+				echo "hata";
+		}
+	}
+
+	/**
+	Ürün güncelleme
+	*/
+	function update_product($id){
+		$name = $this->input->post('name');
+		$type = $this->input->post('type');
+		$price = $this->input->post('price'); 
+
+		$this->db->where('id', $id); 
+		$isItem = $this->db->get('product');
+
+		if($isItem->num_rows()==1){
+			$item = array('type' => $type , 'price' => $price, 'name' => $name );
+			$this->db->where('id',$id);
+			$update=$this->db->update('product',$item);
+			if($update)
+				redirect('adminpanel/page/product/list');
+			else
+				echo "hata";
+		}
 	}
 
 	function signup(){
@@ -106,22 +195,78 @@ class AdminPanel extends CI_Controller {
 			echo "error";
 	}
 
-	function createProduct(){
+	function create_product(){
 		$name = $this->input->post('name');
 		$price = $this->input->post('price');
 		$type = $this->input->post('type');
+		$category_id = $this->input->post('category_id');
+		$brand_id = $this->input->post('brand_id');
+		$detail = $this->input->post('detail');
 
-		$product = array('name' => $name , 'user_id' => $user_id, 'date' => $date, 'piece' => $piece);
-		$insert = $this->db->insert('products', $order);
-		if($insert)
-			echo "ok";
+		if($_FILES['file']['error'] > 0) { echo 'Error during uploading, try again'; }
+		$extsAllowed = array( 'jpg', 'jpeg', 'png', 'gif' );
+		$extUpload = strtolower( substr( strrchr($_FILES['file']['name'], '.') ,1) ) ;
+		if (in_array($extUpload, $extsAllowed) ) { 
+			$image = "{$_FILES['file']['name']}";
+			$result = move_uploaded_file($_FILES['file']['tmp_name'], $image);
+			if($result){
+				$product = array('name' => $name , 'price' => $price, 'image' => $image, 'brand_id' => $brand_id, 'category_id'=>$category_id,'detail'=>$detail);
+				$insert = $this->db->insert('product', $product);
+				if($insert)
+					echo "ok";
+				else
+					echo "error";
+			}
+		} 
+		else { 
+			echo 'File is not valid. Please try again';
+		}
+	}
+
+	function add_category(){
+		$array = array('name' => $this->input->post('name') );
+		$add=$this->db->insert('categories',$array);
+		if($add)
+			redirect('adminpanel/page/category/list');
+	}
+
+	function add_brand(){
+		$array = array('name' => $this->input->post('name'),'category_id' => $this->input->post('category_id') );
+		$add=$this->db->insert('brands',$array);
+		if($add)
+			redirect('adminpanel/page/brand/list');
+	}
+
+	function create_customer(){
+		$username=$this->input->post('username');
+		$name=$this->input->post('name');
+		$surname=$this->input->post('surname');
+		$password=$this->input->post('password');
+		$email=$this->input->post('email');
+		$user = array('username' => $username , 'surname'=>$surname,'name'=>$name,'password'=>$password,'email'=>$email );
+		$add = $this->db->insert('users',$user);
+		if($add)
+			$data['msg']="Başarılı";
 		else
-			echo "error";
+			$data['msg']="Hatalı";
+		redirect('adminpanel/page/customer/list');
 	}
 
 	function stok(){
 		$product_id = $this->input->post('product_id');
 		$piece = $this->input->post('piece'); 
+	}
+
+	function add_user(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$level = $this->input->post('level');
+
+		$admin = array('username' => $username , 'password' => $password, 'level' => $level );
+		if($this->db->insert('admin',$admin))
+			redirect('adminpanel/page/user/list');
+		else
+			echo "ok";
 	}
 
 }
