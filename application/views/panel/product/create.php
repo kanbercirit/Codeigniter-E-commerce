@@ -23,7 +23,7 @@
                     <label>Kategori Seçiniz</label>
                     <select name="category_id" class="form-control">
                         <?php foreach ($categories as $category):?>
-                        <option <?=$category->id?>><?=$category->name?></option> 
+                        <option value="<?=$category->id?>"><?=$category->name?></option> 
                                     <?php endforeach;?>
                     </select>
                 </div>

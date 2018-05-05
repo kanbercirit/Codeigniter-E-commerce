@@ -54,7 +54,7 @@
                                         <td><?=$product->detail?></td>
                                         <td><a href="<?=site_url('adminpanel/update/product/'.$product->id)?>" class="btn btn-success btn-circle"><i class="fa fa-link"></i></a>
                                             <?php if($_SESSION['admin']->level==1):?>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button>
+                                        <a onClick="del('product','product',<?=$product->id?>)" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></a>
                                     <?php endif;?>
                                         <td>
                                     </tr>

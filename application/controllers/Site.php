@@ -65,7 +65,7 @@ class Site extends CI_Controller {
 	}
 
 	function d(){
-		print_r($this->db->query("select * from bill where user_id=1")->row());
+		print_r($this->db->query("alter")->row());
 	}
 
 	function doRegister(){

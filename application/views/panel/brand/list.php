@@ -42,7 +42,9 @@
                                     <tr class="gradeX">
                                         <td><?=$brand->name?></td> 
                                         <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                        <?php if($_SESSION['admin']->level==1):?>
+                                        <a onClick="del('brands','brand',<?=$brand->id?>)" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></a>
+                                    <?php endif;?><td>
                                     </tr>
                                             <?php endforeach;?>
                                 </tbody>

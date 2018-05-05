@@ -35,6 +35,7 @@ class Site_model extends ci_model
 
 		$this->db->where('email', $email);
 		$this->db->where('password', $password);
+		$this->db->where('banned', '0');
 		$isUser = $this->db->get('users');
 		// eğer bu kullanıcı adı şifre varsa
 		if($isUser->num_rows() > 0){
@@ -54,6 +55,7 @@ class Site_model extends ci_model
 	function doLogin($email, $password){ 
 		$this->db->where('email', $email);
 		$this->db->where('password', $password);
+		$this->db->where('banned', '0');
 		$isUser = $this->db->get('users');
 		// eğer bu kullanıcı adı şifre varsa
 		if($isUser->num_rows() > 0){

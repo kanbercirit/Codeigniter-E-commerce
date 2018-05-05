@@ -30,7 +30,40 @@
 <script src="<?=site_url('dist/sweetalert-dev.js')?>"></script>
     <link rel="stylesheet" href="<?=site_url('dist/sweetalert.css')?>">
     
-
+<script type="text/javascript">
+                                function del(table, page, id){
+                                   swal({
+                                      title: "Emin misiniz?",
+                                      text: "Silinen veriler geri alınamaz!",
+                                      type: "warning",
+                                      showCancelButton: true,
+                                      confirmButtonColor: "#DD6B55",
+                                      confirmButtonText: "Evet!",
+                                      cancelButtonText: "Hayır!",
+                                      closeOnConfirm: false,
+                                      closeOnCancel: false
+                                    },
+                                    function(isConfirm){
+                                      if (isConfirm) {
+                                        $.ajax("<?=site_url('adminpanel/del/')?>" + table + "/" + id, {
+                                          success: function(data) {
+                                            swal({title:"Silindi!",type:'success'},function(onConfirm){
+                                                if(onConfirm){
+                                                    window.location.href="<?=site_url('adminpanel/page/')?>" + page + "/list";
+                                                }
+                                            }); 
+                                            
+                                          },
+                                          error: function(err) {
+                                             swal("Hata!", "Veri silinirken bir hata oluştu!", "danger");
+                                          }
+                                       });
+                                      } else {
+                                            swal("İptal edildi", "Verileriniz korunuyor :)", "error");
+                                      }
+                                    });
+                        }
+                </script>
 
 </head>
 

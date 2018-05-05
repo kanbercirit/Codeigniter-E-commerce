@@ -49,8 +49,16 @@ class AdminPanel extends CI_Controller {
 		else if($folder=='product'){
 			$table="product";
 		}
+		else if($folder=='category'){
+			$table="categories";
+		}
+		else if($folder=='brand'){
+			$table="brands";
+		}
 		$this->db->where('id', $id);
 		$data['data'] = $this->db->get($table)->row();
+		$data['categories'] = $this->db->get('categories')->result(); 
+		$data['brands'] = $this->db->get('brands')->result();
 		$this->load->view('panel/'.$folder.'/update',$data);
 	}
 
@@ -85,12 +93,13 @@ class AdminPanel extends CI_Controller {
 		$name = $this->input->post('name');
 		$surname = $this->input->post('surname');
 		$email = $this->input->post('email');
+		$banned = $this->input->post('banned');
 
 		$this->db->where('id', $id); 
 		$isUser = $this->db->get('users');
 
 		if($isUser->num_rows()==1){
-			$user = array('username' => $username , 'password' => $password, 'name' => $name, 'surname'=>$surname,'email'=>$email );
+			$user = array('username' => $username , 'password' => $password, 'name' => $name, 'surname'=>$surname,'email'=>$email,'banned' => $banned );
 			$this->db->where('id',$id);
 			$update=$this->db->update('users',$user);
 			if($update)
@@ -107,12 +116,21 @@ class AdminPanel extends CI_Controller {
 		$name = $this->input->post('name');
 		$type = $this->input->post('type');
 		$price = $this->input->post('price'); 
+		$category_id = $this->input->post('category_id'); 
+		$brand_id = $this->input->post('brand_id'); 
+		$detail = $this->input->post('detail'); 
+		$image = $this->input->post('image'); 
 
+		if($image == ''){
+			$item = array('type' => $type , 'price' => $price, 'name' => $name, 'category_id'=>$category_id,'brand_id'=>$brand_id,'detail'=>$detail );
+		}
+		else{
+			$item = array('type' => $type , 'price' => $price, 'name' => $name, 'category_id'=>$category_id,'brand_id'=>$brand_id,'detail'=>$detail,'image'=>$image );
+		}
 		$this->db->where('id', $id); 
 		$isItem = $this->db->get('product');
 
-		if($isItem->num_rows()==1){
-			$item = array('type' => $type , 'price' => $price, 'name' => $name );
+		if($isItem->num_rows()==1){ 
 			$this->db->where('id',$id);
 			$update=$this->db->update('product',$item);
 			if($update)
@@ -120,6 +138,17 @@ class AdminPanel extends CI_Controller {
 			else
 				echo "hata";
 		}
+	}
+
+	/**
+	Kategori güncelleme
+	*/
+	function update_category($id){
+		$name = $this->input->post('name');
+		$input = array('name' => $name );
+		$this->db->where('id',$id);
+		$this->db->update('categories',$input);
+		redirect('adminpanel/page/category/list');
 	}
 
 	function signup(){
@@ -214,7 +243,7 @@ class AdminPanel extends CI_Controller {
 				$product = array('name' => $name , 'price' => $price, 'image' => $image, 'brand_id' => $brand_id, 'category_id'=>$category_id,'detail'=>$detail);
 				$insert = $this->db->insert('product', $product);
 				if($insert)
-					echo "ok";
+					redirect('adminpanel/page/product/list');
 				else
 					echo "error";
 			}
@@ -270,8 +299,8 @@ class AdminPanel extends CI_Controller {
 			echo "ok";
 	}
 
-	function del_comment($id){
-		$del=$this->db->query("delete from comments where id=$id");
+	function del($table,$id){
+		$del=$this->db->query("delete from $table where id=$id");
 		if($del)
 			echo "ok";
 		else

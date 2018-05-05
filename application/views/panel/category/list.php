@@ -44,8 +44,10 @@
                                     <?php foreach ($categories as $category) :?>
                                     <tr class="gradeX">
                                         <td><?=$category->name?></td> 
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
-                                        <button type="button" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></button><td>
+                                        <td><a href="<?=site_url('adminpanel/update/category/'.$category->id)?>" class="btn btn-success btn-circle"><i class="fa fa-link"></i></a>
+                                        <?php if($_SESSION['admin']->level==1):?>
+                                        <a onClick="del('categories','category',<?=$category->id?>)" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></a>
+                                    <?php endif;?><td>
                                     </tr>
                                 <?php endforeach;?>
                                 </tbody>

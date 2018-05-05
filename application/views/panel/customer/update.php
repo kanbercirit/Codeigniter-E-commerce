@@ -30,7 +30,16 @@
                 <div class="form-group">
 					<label>Kullanıcı Adı</label>
 					<input class="form-control" value="<?=$data->username?>" name="username" placeholder="Kullanıcı Adını Giriniz"><br>
-					<button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+                <div class="form-group">
+                    <label>Banla</label>
+                    <select class="form-control" value="<?=$data->banned?>" name="banned">
+                        <option value="1">Evet</option>
+                        <option value="0">Hayır</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
                 </div>
             </div>
           			

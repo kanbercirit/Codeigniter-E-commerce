@@ -42,27 +42,13 @@
                                     <tr class="gradeX">
                                         <td><?=$comment->comment?></td>  
                                         <td>
-                                        <a onClick="del(<?=$comment->id?>)" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></a><td>
+                                        <?php if($_SESSION['admin']->level==1):?>
+                                        <a onClick="del('comments','comment',<?=$comment->id?>)" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></a>
+                                    <?php endif;?><td>
                                     </tr>
                                             <?php endforeach;?>
                                 </tbody>
                             </table>
-                            <script type="text/javascript">
-			                    function del(comment_id){
-			                       $.ajax("<?=site_url('adminpanel/del_comment/')?>" + comment_id, {
-			                              success: function(data) {
-			                                 swal({title:"Yorum silindi!",type:'success'},function(onConfirm){
-			                                    if(onConfirm){
-			                                        window.location.href="<?=site_url('adminpanel')?>";
-			                                    }
-			                                });
-			                              },
-			                              error: function(err) {
-			                                 swal("Hata!", "Yorum silinirken bir hata oluştu!", "danger");
-			                              }
-			                           });
-                        }
-                </script>
                         </div>
                         <!-- /.panel-body -->
                     </div>
