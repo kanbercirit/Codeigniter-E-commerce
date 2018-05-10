@@ -40,6 +40,7 @@
                                         <th>Şifre</th>
                                         <th>E-posta</th>
                                         <th>Kullanıcı Adı</th>
+                                        <th>Banlı mı</th>
                                         <th>Ekle/Sil<th>
                                     </tr>
                                 </thead>
@@ -51,6 +52,7 @@
                                         <td><?=$customer->password?></td>
                                         <td><?=$customer->email?></td>
                                         <td><?=$customer->username?></td> 
+                                        <td><?=$customer->banned?></td> 
                                         <td><a href="<?=site_url('adminpanel/update/customer/'.$customer->id)?>" class="btn btn-success btn-circle"><i class="fa fa-link"></i></a>
                                             <?php if($_SESSION['admin']->level == 1) :?>
                                         <a onClick="del('users','customer',<?=$customer->id?>)" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></a>

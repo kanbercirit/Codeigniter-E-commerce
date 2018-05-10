@@ -31,7 +31,7 @@
                     <label>Marka Seçiniz</label>
                     <select name="brand_id" class="form-control">
                         <?php foreach ($brands as $brand):?>
-                        <option <?=$brand->id?>><?=$brand->name?></option> 
+                        <option value="<?=$brand->id?>"><?=$brand->name?></option> 
                                     <?php endforeach;?>
                     </select>
                 </div>

@@ -7,9 +7,26 @@
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
-                <?php print_r($data)?>
-           <div class="col-lg-4">
+                
+                <?php foreach ($orders as $order) : ?>
+                    <?php if($order->state) :?>
+                        <div class="col-lg-4">
                     <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <?=$order->name?>
+                        </div>
+                        <div class="panel-body">
+                            <p><?=$order->total?> TL</p>
+                        </div>
+                        <div class="panel-footer">
+                            
+                        </div>
+                    </div>
+                    <!-- /.col-lg-4 -->
+                </div>
+                            <?php else :?>
+                                <div class="col-lg-4">
+                    <div class="panel panel-red">
                         <div class="panel-heading">
                             Green Panel
                         </div>
@@ -20,19 +37,10 @@
                             Panel Footer
                         </div>
                     </div>
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            Red Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
                     <!-- /.col-lg-4 -->
                 </div>
+                    <?php endif;?>
+                    <?php endforeach;?>
            
 
 

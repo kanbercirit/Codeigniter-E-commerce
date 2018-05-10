@@ -141,10 +141,10 @@ class Site extends CI_Controller {
 		$data['product'] = $this->site_model->detail('product', $id);
 		$data['comments'] = $this->site_model->comments( $id);
 		$this->load->view('product-detail', $data);
-	}
+	} 
 
 	function add_baskets($product_id, $quantity){
-		$user_id = $_SESSION['user']->id;
+		$user_id = $_SESSION['user']->id; 
 		$state = $this->site_model->add_cart($user_id, $product_id, $quantity);
 		if($state)
 			redirect('site/page/cart');
@@ -196,5 +196,15 @@ class Site extends CI_Controller {
 		else
 			echo "error";
 	} 
+
+	function pay($order_id){
+		$user_id = $_SESSION['user']->id; 
+		$order = $_SESSION['order']; 
+		$add = $this->site_model->pay($user_id, $order);
+		if($add)
+			echo "ok";
+		else
+			echo "error";
+	}
 
 }

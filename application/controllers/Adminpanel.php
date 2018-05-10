@@ -32,7 +32,7 @@ class AdminPanel extends CI_Controller {
 		$data['admins'] = $this->db->get('admin')->result();
 		$data['customers'] = $this->db->get('users')->result();
 		$data['products'] = $this->db->query("select product.id as id,detail,product.name as name, product.price as price, brands.name as brand,categories.name as category from product inner join brands on product.brand_id=brands.id inner join categories on categories.id=product.category_id")->result();
-		$data['orders'] = $this->db->get('orders')->result();
+		$data['orders'] = $this->db->query("select users.name, total,orders.state as state from orders inner join users on users.id =orders.user_id")->result();
 		$data['categories'] = $this->db->get('categories')->result();
 		$data['comments'] = $this->db->get('comments')->result();
 		$data['brands'] = $this->db->get('brands')->result();
@@ -118,15 +118,29 @@ class AdminPanel extends CI_Controller {
 		$price = $this->input->post('price'); 
 		$category_id = $this->input->post('category_id'); 
 		$brand_id = $this->input->post('brand_id'); 
-		$detail = $this->input->post('detail'); 
-		$image = $this->input->post('image'); 
+		$detail = $this->input->post('detail');  
+		$image = $this->input->post('image');  
 
-		if($image == ''){
-			$item = array('type' => $type , 'price' => $price, 'name' => $name, 'category_id'=>$category_id,'brand_id'=>$brand_id,'detail'=>$detail );
+		if($image != ''){
+			if($_FILES['file']['error'] > 0) { echo 'Error during uploading, try again'; }
+				$extsAllowed = array( 'jpg', 'jpeg', 'png', 'gif' );
+				$extUpload = strtolower( substr( strrchr($_FILES['file']['name'], '.') ,1) ) ;
+				if (in_array($extUpload, $extsAllowed) ) { 
+					$image = "{$_FILES['file']['name']}";
+					$result = move_uploaded_file($_FILES['file']['tmp_name'], "images/".$image);
+					if($result){
+						$item = array('type' => $type , 'price' => $price, 'name' => $name, 'category_id'=>$category_id,'brand_id'=>$brand_id,'detail'=>$detail,'image'=>$image );
+					}
+				} 
+				else { 
+					echo 'File is not valid. Please try again';
+				}
 		}
 		else{
-			$item = array('type' => $type , 'price' => $price, 'name' => $name, 'category_id'=>$category_id,'brand_id'=>$brand_id,'detail'=>$detail,'image'=>$image );
+			$item = array('type' => $type , 'price' => $price, 'name' => $name, 'category_id'=>$category_id,'brand_id'=>$brand_id,'detail'=>$detail );
 		}
+
+		 
 		$this->db->where('id', $id); 
 		$isItem = $this->db->get('product');
 
@@ -238,7 +252,7 @@ class AdminPanel extends CI_Controller {
 		$extUpload = strtolower( substr( strrchr($_FILES['file']['name'], '.') ,1) ) ;
 		if (in_array($extUpload, $extsAllowed) ) { 
 			$image = "{$_FILES['file']['name']}";
-			$result = move_uploaded_file($_FILES['file']['tmp_name'], $image);
+			$result = move_uploaded_file($_FILES['file']['tmp_name'], "images/".$image);
 			if($result){
 				$product = array('name' => $name , 'price' => $price, 'image' => $image, 'brand_id' => $brand_id, 'category_id'=>$category_id,'detail'=>$detail);
 				$insert = $this->db->insert('product', $product);

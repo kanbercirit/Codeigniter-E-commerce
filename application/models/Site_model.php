@@ -1,5 +1,4 @@
 <?php
-
 /**
 * 
 */
@@ -73,7 +72,13 @@ class Site_model extends ci_model
 	}
 
 	function add_cart($user_id, $product_id, $quantity){
-		return $this->db->query("insert into baskets (product_id,user_id, quantity) values ('$product_id', '$user_id', $quantity)");
+		if(!isset($_SESSION['order'])){ 
+			$order = $this->db->query("insert into orders (user_id, total) values($user_id,0)");
+			$order = $this->db->insert_id();	
+			$_SESSION['order'] = $order;
+		}
+			$order = $_SESSION['order'];
+			return $this->db->query("insert into baskets (product_id,user_id, quantity, state) values ('$product_id', '$user_id', $quantity, $order)");
 	}
 
 	function search($key){
@@ -134,4 +139,13 @@ class Site_model extends ci_model
 		return $this->db->query("delete from baskets where id=$id");
 	}
 
+	function pay($user_id, $order){
+		$total = $this->db->query("select sum(product.price) as total from baskets inner join product on product.id=baskets.product_id where state=$order")->row();
+		$order_ = array('total' => $total->total, 'state' => 1 );
+		$this->db->where('id', $order);
+		$update = $this->db->update('orders', $order_);
+		if($update){
+			return $this->db->query("delete from baskets where state = $order");
+		}
+	}
 }

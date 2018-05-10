@@ -35,15 +35,21 @@
 			<div class="row">  
 				<?php $this->load->view('review')?>
                 <script type="text/javascript">
-                    function pay(){
-                        swal({title:"Ödeme yapıldı!",type:'success'},function(onConfirm){
+                    function pay(order_id){
+                        url = "<?=site_url('site/pay/')?>" + order_id;
+                        $.ajax({
+                          url: url,
+                          context: document.body
+                        }).done(function() {
+                          swal({title:"Ödeme yapıldı!",type:'success'},function(onConfirm){
                             if(onConfirm){
                                 window.location.href="<?=site_url()?>";
                             }
                         });
+                        });
                         }
                 </script>
-				<div style="float:right;margin-bottom: 10px"><a class="btn btn-primary" onClick="pay()">Alışverişi tamamla</a></div>
+				<div style="float:right;margin-bottom: 10px"><a class="btn btn-primary" onClick="pay(<?=$_SESSION['order']?>)">Alışverişi tamamla</a></div>
 			</div>
 		</div>
 	</section>

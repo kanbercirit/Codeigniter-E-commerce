@@ -25,9 +25,7 @@ function(isConfirm){
   }
 })
             
-function pay(){
-	swal("Silindi!", "Ürün sepetten silindi!", "success");
-}
+ 
       
 }
 </script>
@@ -66,11 +64,7 @@ function pay(){
 							</td>
 							 
 							<td class="cart_delete">
-<<<<<<< HEAD
 								<a class="cart_quantity_delete" onClick="del(<?=$basket->id?>)"><i class="fa fa-times"></i></a>
-=======
-								<button class="cart_quantity_delete" onClick="del()"> <i class="fa fa-times"></i></button>
->>>>>>> 7892b7956e48afda85c1218a812454009531bf22
 							</td>
 						</tr>
 						 <?php endforeach;?>
