@@ -19,6 +19,8 @@
 							</div>
 						</div>
 						<?php endforeach;?>
+						<?php else: ?>
+							Ürün bulunamadı
 								<?php endif;?>
 					</div><!--features_items-->
 				</div>

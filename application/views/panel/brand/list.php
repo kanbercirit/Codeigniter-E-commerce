@@ -41,7 +41,7 @@
                                     <?php foreach ($brands as $brand):?> 
                                     <tr class="gradeX">
                                         <td><?=$brand->name?></td> 
-                                        <td><button type="button" class="btn btn-success btn-circle"><i class="fa fa-link"></i></button>
+                                        <td><a href="<?=site_url('adminpanel/update/brand/'.$brand->id)?>" class="btn btn-success btn-circle"><i class="fa fa-link"></i></a>
                                         <?php if($_SESSION['admin']->level==1):?>
                                         <a onClick="del('brands','brand',<?=$brand->id?>)" class="btn btn-warning btn-circle"><i class="fa fa-times"></i></a>
                                     <?php endif;?><td>

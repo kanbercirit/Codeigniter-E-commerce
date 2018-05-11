@@ -281,6 +281,14 @@ class AdminPanel extends CI_Controller {
 			redirect('adminpanel/page/brand/list');
 	}
 
+	function update_brand($id){
+		$array = array('name' => $this->input->post('name'),'category_id' => $this->input->post('category_id') );
+		$this->db->where('id',$id);
+		$add=$this->db->update('brands',$array);
+		if($add)
+			redirect('adminpanel/page/brand/list');
+	}
+
 	function create_customer(){
 		$username=$this->input->post('username');
 		$name=$this->input->post('name');

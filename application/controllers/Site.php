@@ -65,7 +65,7 @@ class Site extends CI_Controller {
 	}
 
 	function d(){
-		print_r($this->db->query("alter")->row());
+		print_r($this->db->query("select * from product")->result());
 	}
 
 	function doRegister(){
@@ -157,18 +157,18 @@ class Site extends CI_Controller {
 		$data['categories'] = $this->site_model->categories();
 		$data['brand_items'] = $this->site_model->brand_items();
 		$data['category_brands'] = $this->site_model->category_brands();
-		$data['types'] = $this->site_model->types();
-		$data['products'] = $this->site_model->select_table('product');
+		$data['types'] = $this->site_model->types(); 
 		$data['products'] = $this->site_model->search($searchkey);
 		$this->load->view('search', $data);
 	}
 
-	function filter($part, $name){
+	function filter($part, $id){
 		$data['categories'] = $this->site_model->categories();
 		$data['brand_items'] = $this->site_model->brand_items();
+		$data['brands'] = $this->site_model->select_table('brands');
 		$data['category_brands'] = $this->site_model->category_brands();
 		$data['types'] = $this->site_model->types();
-		$data['products'] = $this->site_model->filter($part, $name);
+		$data['products'] = $this->db->query("select *from product where brand_id=$id")->result();
 		$data['content'] = strtoupper($name);
 		
 		$this->load->view('search', $data);

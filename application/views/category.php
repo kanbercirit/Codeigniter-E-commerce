@@ -1,6 +1,6 @@
 <div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>KATEGORİLER</h2>
+						<h2>KATEGORİLER</h2> 
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php foreach ($categories as $category) :?>
 								<?php if($category->total_brand > 1) :?>
@@ -18,7 +18,7 @@
 								<div id="sportswear" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="<?=site_url('site/filter/brands/'.$brand->brand_name)?>"><?=$brand->brand_name?> </a></li> 
+											<li><a href="<?=site_url('site/filter/brands/'.$brand->brand_id)?>"><?=$brand->brand_name?> </a></li> 
 										</ul>
 									</div>
 								</div>
@@ -28,7 +28,7 @@
 						<?php else : ?>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="<?=site_url('site/filter/categories/'.$category->category_name)?>"><?=$category->category_name?></a></h4>
+									<h4 class="panel-title"><a href="<?=site_url('site/filter/categories/'.$category->id)?>"><?=$category->category_name?></a></h4>
 								</div>
 							</div>
 						<?php endif;?>
@@ -40,7 +40,7 @@
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<?php foreach ($brands as $brand) :?>
-									<li><a href="<?=site_url('site/filter/brands/'.$brand->name)?>"> <?=$brand->name?></a></li> 
+									<li><a href="<?=site_url('site/filter/brands/'.$brand->id)?>"> <?=$brand->name?></a></li> 
 								<?php endforeach;?>
 								</ul>
 							</div>

@@ -11,7 +11,7 @@ class Site_model extends ci_model
 	} 
 
 	function categories(){
-		return $this->db->query("select count(category_id) as total_brand, categories.name as category_name from brands inner join categories on categories.id = brands.category_id group by brands.category_id")->result();
+		return $this->db->query("select categories.id as id ,count(category_id) as total_brand, categories.name as category_name from brands inner join categories on categories.id = brands.category_id group by brands.category_id")->result();
 	}
 
 	function brand_items(){
@@ -81,13 +81,6 @@ class Site_model extends ci_model
 			return $this->db->query("insert into baskets (product_id,user_id, quantity, state) values ('$product_id', '$user_id', $quantity, $order)");
 	}
 
-	function search($key){
-		return $this->db->query("select * from product where name like '%$key%'")->result();
-	}
-
-	function filter($part, $name){
-		return $this->db->query("select * from $part where name='$name'")->result();
-	}
 
 	function baskets($user_id){
 		return $this->db->query("SELECT product.name as product_name, baskets.id as id, baskets.quantity,product.image, product.price as price FROM `baskets` inner join product on product.id = baskets.product_id inner join users on users.id=baskets.user_id where baskets.user_id=$user_id")->result();
