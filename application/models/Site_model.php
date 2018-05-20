@@ -11,7 +11,25 @@ class Site_model extends ci_model
 	} 
 
 	function categories(){
-		return $this->db->query("select categories.id as id ,count(category_id) as total_brand, categories.name as category_name from brands inner join categories on categories.id = brands.category_id group by brands.category_id")->result();
+		$x_categories =  $this->db->query("select categories.id as id ,count(category_id) as total_brand, categories.name as category_name from brands inner join categories on categories.id = brands.category_id group by brands.category_id")->result();
+		$categories = $this->db->get('categories')->result();
+		foreach ($categories as $category) {
+			$var = 0;
+			foreach ($x_categories as $x_category) {
+				if($x_category->id == $category->id){
+					$var++;
+				}
+			}
+			if(!$var){
+				$new = array('id' => $category->id, 'total_brand'=>0, 'category_name'=>$category->name );
+				$count = count($x_categories);
+				$x_categories[$count]->id = $category->id;
+				$x_categories[$count]->total_brand = 0;
+				$x_categories[$count]->category_name = $category->name;
+			} 
+		}
+		return $x_categories;
+
 	}
 
 	function brand_items(){

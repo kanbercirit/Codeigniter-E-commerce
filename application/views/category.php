@@ -13,17 +13,17 @@
 										</a>
 									</h4>
 								</div>
-								<?php foreach ($category_brands as $brand) :?>
-								<?php if($category->category_name == $brand->category_name) :?>
 								<div id="sportswear" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="<?=site_url('site/filter/brands/'.$brand->brand_id)?>"><?=$brand->brand_name?> </a></li> 
+											<?php foreach ($brands as $brand) :?>
+											<?php if($category->id == $brand->category_id) :?>
+											<li><a href="<?=site_url('site/filter/brands/'.$brand->id)?>"><?=$brand->name?> </a></li> 
+											<?php endif;?>
+											<?php endforeach;?>
 										</ul>
 									</div>
 								</div>
-							<?php endif;?>
-							<?php endforeach;?>
 							</div>
 						<?php else : ?>
 							<div class="panel panel-default">
