@@ -9,7 +9,7 @@
                 </div>
                 <!-- /.row -->
 
-        <form action="<?=site_url('adminpanel/update_brand/'.$brand->id)?>" method="post">    
+        <form action="<?=site_url('adminpanel/update_brand/'.$data->id)?>" method="post">    
             <div class="panel-body">
                 <div class="form-group">
 					<label>Marka Adı</label>
