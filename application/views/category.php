@@ -7,13 +7,13 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+										<a data-toggle="collapse" data-parent="#accordian" href="#category<?=$category->id?>">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
 											<?=$category->category_name?>
 										</a>
 									</h4>
 								</div>
-								<div id="sportswear" class="panel-collapse collapse">
+								<div id="category<?=$category->id?>" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
 											<?php foreach ($brands as $brand) :?>
