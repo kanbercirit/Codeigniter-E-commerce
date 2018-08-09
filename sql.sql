@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 10 May 2018, 10:42:00
+-- Üretim Zamanı: 09 Ağu 2018, 14:05:59
 -- Sunucu sürümü: 10.1.16-MariaDB
 -- PHP Sürümü: 5.5.38
 
@@ -95,8 +95,10 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `name`, `category_id`) VALUES
-(1, '11', 1),
-(2, '21', 2);
+(8, '11sd', 7),
+(9, '2', 8),
+(10, '12', 7),
+(11, '22', 8);
 
 -- --------------------------------------------------------
 
@@ -114,8 +116,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`) VALUES
-(1, '1'),
-(2, '2');
+(7, '1'),
+(8, '2');
 
 -- --------------------------------------------------------
 
@@ -149,7 +151,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `total`, `user_id`, `state`) VALUES
-(1, 400, 21, 1);
+(1, 400, 21, 1),
+(2, 400, 21, 1);
 
 -- --------------------------------------------------------
 
@@ -185,7 +188,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `category_id`, `brand_id`, `sold`, `type`, `image`, `detail`) VALUES
-(17, '1', 400, 1, 1, 0, NULL, '1.jpg', '1');
+(21, '1', 1, 3, 4, 0, NULL, 'otomasyon@localhost.png', '21');
 
 -- --------------------------------------------------------
 
@@ -306,7 +309,7 @@ ALTER TABLE `admin`
 -- Tablo için AUTO_INCREMENT değeri `baskets`
 --
 ALTER TABLE `baskets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Tablo için AUTO_INCREMENT değeri `bill`
 --
@@ -316,12 +319,12 @@ ALTER TABLE `bill`
 -- Tablo için AUTO_INCREMENT değeri `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Tablo için AUTO_INCREMENT değeri `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Tablo için AUTO_INCREMENT değeri `comments`
 --
@@ -331,7 +334,7 @@ ALTER TABLE `comments`
 -- Tablo için AUTO_INCREMENT değeri `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Tablo için AUTO_INCREMENT değeri `payment`
 --
@@ -341,7 +344,7 @@ ALTER TABLE `payment`
 -- Tablo için AUTO_INCREMENT değeri `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- Tablo için AUTO_INCREMENT değeri `stok`
 --
